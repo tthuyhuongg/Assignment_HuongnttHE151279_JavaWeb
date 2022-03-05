@@ -12,13 +12,15 @@ package entity;
 public class Categories {
     private int caid;
     private String caname;
+    private String image;
 
     public Categories() {
     }
 
-    public Categories(int caid, String caname) {
+    public Categories(int caid, String caname, String image) {
         this.caid = caid;
         this.caname = caname;
+        this.image = image;
     }
 
     public int getCaid() {
@@ -37,10 +39,17 @@ public class Categories {
         this.caname = caname;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     @Override
     public String toString() {
-        return "Categories{" + "caid=" + caid + ", caname=" + caname + '}';
+        return "Categories{" + "caid=" + caid + ", caname=" + caname + ", image=" + image + '}';
     }
-    
-    
+  
 }
