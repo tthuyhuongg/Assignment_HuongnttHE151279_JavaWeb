@@ -10,9 +10,9 @@ package entity;
  * @author thuy huong
  */
 public class Categories {
-    private int caid;
-    private String caname;
-    private String image;
+    int caid;
+    String caname;
+    String image;
 
     public Categories() {
     }
@@ -51,5 +51,7 @@ public class Categories {
     public String toString() {
         return "Categories{" + "caid=" + caid + ", caname=" + caname + ", image=" + image + '}';
     }
+
+   
   
 }
