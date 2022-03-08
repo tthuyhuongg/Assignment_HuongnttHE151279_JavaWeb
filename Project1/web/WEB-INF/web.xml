@@ -4,9 +4,17 @@
         <servlet-name>firstservlet</servlet-name>
         <servlet-class>controller.firstservlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>categoryServlet</servlet-name>
+        <servlet-class>controller.categoryServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>firstservlet</servlet-name>
         <url-pattern>/first</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>categoryServlet</servlet-name>
+        <url-pattern>/category</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

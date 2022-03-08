@@ -135,7 +135,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li class="nav-item active"><a class="nav-link" href="index.html">Trang Chủ</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="first">Trang Chủ</a></li>
                             <li class="nav-item"><a class="nav-link" href="about.html">The Flower Shop</a></li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Cửa Hàng</a>
@@ -148,7 +148,7 @@
                                     <li><a href="wishlist.html">Wishlist</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="gallery.html">Danh mục sản phẩm</a></li>
+                            <li class="nav-item"><a class="nav-link" href="category">Danh mục sản phẩm</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact-us.html">Liên Hệ</a></li>
                         </ul>
                     </div>
@@ -221,8 +221,6 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h1 class="m-b-20"><strong>Chào Mừng Bạn Đến Với<br>The Flower Shop</strong></h1>
-                                <!--                                <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>-->
-                                <p><a class="btn hvr-hover" href="#">Shop New</a></p>
                             </div>
                         </div>
                     </div>
@@ -233,8 +231,6 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h1 class="m-b-20"><strong>Chào Mừng Bạn Đến Với<br>The Flower Shop</strong></h1>
-                                <!--                                <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>-->
-                                <p><a class="btn hvr-hover" href="#">Shop New</a></p>
                             </div>
                         </div>
                     </div>
@@ -245,14 +241,12 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h1 class="m-b-20"><strong>Chào Mừng Bạn Đến Với<br>The Flower Shop</strong></h1>
-                                <!--                                <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>-->
-                                <p><a class="btn hvr-hover" href="#">Shop New</a></p>
                             </div>
                         </div>
                     </div>
                 </li>
             </ul>
-            //            <div class="slides-navigation">
+             <div class="slides-navigation">
                 <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                 <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
             </div>
@@ -266,7 +260,7 @@
                     <c:forEach items="${listca}" var="c">
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             <div class="shop-cat-box">
-                                <a class="btn hvr-hover" href="#">${c.caname}</a>
+                                <a class="btn hvr-hover">${c.caname}</a>
                                 <img class="img-fluid" src="${c.image}" alt="" />
                             </div>
                         </div>
@@ -405,8 +399,7 @@
                         </div>
                     </div>
                 </div>
-                </c:forEach>
-              
+                </c:forEach>  
             </div>
         </div>
     </div>
