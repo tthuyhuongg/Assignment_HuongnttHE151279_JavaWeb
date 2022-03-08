@@ -35,15 +35,17 @@ public class categoryServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet categoryServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet categoryServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String cateID = request.getParameter("cid");
+            ProductDAO p = new ProductDAO();
+            ArrayList<Product> listp = p.getAll();
+            ArrayList<Product> listhcm = p.getHCM("1");
+            ArrayList<Product> listty = p.getHCM("2");
+            ArrayList<Product> listcb = p.getHCM("3");
+            request.setAttribute("listcm", listhcm);
+            request.setAttribute("listty", listty);
+            request.setAttribute("listcb", listcb);
+            request.setAttribute("listpro", listp);
+            request.getRequestDispatcher("category.jsp").forward(request, response);
         }
     }
 
@@ -59,7 +61,7 @@ public class categoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    //    processRequest(request, response);
+            processRequest(request, response);
     }
 
     /**
@@ -73,19 +75,9 @@ public class categoryServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    //    processRequest(request, response);
-        response.setContentType("text/html;charset=UTF-8");
-        String cateID = request.getParameter("cid");
-        ProductDAO p = new ProductDAO();
-        ArrayList<Product> listp = p.getAll();
-        ArrayList<Product> listhcm = p.getHCM("1");
-        ArrayList<Product> listty = p.getHCM("2");
-        ArrayList<Product> listcb = p.getHCM("3");
-        request.setAttribute("listcm", listhcm);
-        request.setAttribute("listty", listty);
-        request.setAttribute("listcb", listcb);
-        request.setAttribute("listpro", listp);
-        request.getRequestDispatcher("category.jsp").forward(request, response);
+           processRequest(request, response);
+        
+
     }
 
     /**

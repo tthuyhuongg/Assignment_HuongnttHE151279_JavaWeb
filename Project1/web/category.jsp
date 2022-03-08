@@ -137,7 +137,6 @@
                                     <li><a href="cart.html">Cart</a></li>
                                     <li><a href="checkout.html">Checkout</a></li>
                                     <li><a href="my-account.html">My Account</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="category.jsp">Danh mục sản phẩm</a></li>
@@ -255,11 +254,11 @@
                                     <img src="${p.image}" class="img-fluid" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
-                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+<!--                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->
                                         </ul>
-                                        <a class="cart" href="#">Add to Cart</a>
+                                        <a class="cart" href="#">Thêm Vào Giỏ Hàng</a>
                                     </div>
                                 </div>
                             </div>
@@ -273,11 +272,11 @@
                                     <img src="${p.image}" class="img-fluid" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
-                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+<!--                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>-->
+<!--                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->
                                         </ul> 
-                                        <a class="cart" href="#">Add to Cart</a>
+                                        <a class="cart" href="#">Thêm Vào Giỏ Hàng</a>
                                     </div>
                                 </div>                        
                             </div>
@@ -292,11 +291,11 @@
                                     <img src="${p.image}" class="img-fluid" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
-                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+<!--                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>-->
+<!--                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->
                                         </ul>
-                                        <a class="cart" href="#">Add to Cart</a>
+                                        <a class="cart" href="#">Thêm Vào Giỏ Hàng</a>
                                     </div>
                                 </div>
                             </div>

@@ -36,15 +36,23 @@ public class firstservlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet firstservlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet firstservlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+
+            ProductDAO p = new ProductDAO();
+            ArrayList<Product> listp = p.getAll();
+            ArrayList<Categories> listc = p.getAllCa();
+            ArrayList<Product> listhcm = p.getHCM("1");
+            ArrayList<Product> listty = p.getHCM("2");
+            ArrayList<Product> listcb = p.getHCM("3");
+            request.setAttribute("listpro", listp);
+            request.setAttribute("listca", listc);
+            request.setAttribute("listcm", listhcm);
+            request.setAttribute("listty", listty);
+            request.setAttribute("listcb", listcb);
+            request.setCharacterEncoding("utf-8");
+//        for (Categories ca : listc) {
+//            out.println(ca);
+//        }
+            request.getRequestDispatcher("trangchu.jsp").forward(request, response);
         }
     }
 
@@ -60,7 +68,7 @@ public class firstservlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    //    processRequest(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -74,25 +82,9 @@ public class firstservlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    //    processRequest(request, response);
+        processRequest(request, response);
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        ProductDAO p = new ProductDAO();
-        ArrayList<Product> listp = p.getAll();
-        ArrayList<Categories> listc = p.getAllCa();
-        ArrayList<Product> listhcm = p.getHCM("1");
-        ArrayList<Product> listty = p.getHCM("2");
-        ArrayList<Product> listcb = p.getHCM("3");
-        request.setAttribute("listpro", listp);
-        request.setAttribute("listca", listc);
-        request.setAttribute("listcm", listhcm);
-        request.setAttribute("listty", listty);
-        request.setAttribute("listcb", listcb);
-        request.setCharacterEncoding("utf-8");
-//        for (Categories ca : listc) {
-//            out.println(ca);
-//        }
-        request.getRequestDispatcher("trangchu.jsp").forward(request, response);
+
     }
 
     /**
