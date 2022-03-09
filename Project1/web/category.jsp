@@ -147,14 +147,30 @@
 
                     <!-- Start Atribute Navigation -->
                     <div class="attr-nav">
-                        <ul>
-                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                            <li class="side-menu"><a href="#">
-                                    <i class="fa fa-shopping-bag"></i>
-                                    <span class="badge">3</span>
-                                    <p>Giỏ Hàng</p>
-                                </a></li>
-                        </ul>
+                        <div class="container">
+                            <ul>
+                                <div class="row">
+                                    <div class="col-lg-9">
+                                        <div class="input-group rounded">
+                                            <form action="search" method="post">
+                                                <input name="txt" type="text"/>
+                                                <button type="submit" >
+                                                    <li class="search"><i class="fa fa-search"></i></li>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 ">
+                                        <li class="side-menu"><a href="#">
+                                                <i class="fa fa-shopping-bag"></i>
+                                                <span class="badge">3</span>
+                                                <p>Giỏ Hàng</p>
+                                            </a></li>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
                     </div>
                     <!-- End Atribute Navigation -->
                 </div>
