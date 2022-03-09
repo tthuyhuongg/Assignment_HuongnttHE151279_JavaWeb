@@ -103,5 +103,27 @@ public class ProductDAO extends BaseDAO<Product> {
         }
         return null;
     }
+    
+    public ArrayList<Product> search(String txt) {
+        ArrayList<Product> list = new ArrayList<>();
+        String sql = "select * from Product where Name like ?";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setString(1,"%"+ txt +"%");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Product p = new Product();
+                p.setMasp(rs.getString("masp"));
+                p.setNamesp(rs.getString("Name"));
+                p.setImage(rs.getString("Picture"));
+                p.setPrice(rs.getFloat("price"));
+                p.setTitle(rs.getString("title"));
+                p.setDescription(rs.getString("Description"));
+                list.add(p);
+            }
+        } catch (SQLException e) {
+        }
+        return list;
+    }  
 
 }
