@@ -40,14 +40,8 @@ public class firstservlet extends HttpServlet {
             ProductDAO p = new ProductDAO();
             ArrayList<Product> listp = p.getAll();
             ArrayList<Categories> listc = p.getAllCa();
-            ArrayList<Product> listhcm = p.getHCM("1");
-            ArrayList<Product> listty = p.getHCM("2");
-            ArrayList<Product> listcb = p.getHCM("3");
             request.setAttribute("listpro", listp);
             request.setAttribute("listca", listc);
-            request.setAttribute("listcm", listhcm);
-            request.setAttribute("listty", listty);
-            request.setAttribute("listcb", listcb);
             request.setCharacterEncoding("utf-8");
 //        for (Categories ca : listc) {
 //            out.println(ca);
