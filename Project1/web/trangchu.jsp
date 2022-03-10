@@ -71,6 +71,36 @@
                         </div>
                     </div>
                 </div>
+<!--                <div class="text-slid-box">
+                        <div id="offer-box" class="carouselTicker">
+                            <ul class="offer-box">
+                                <li>
+                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT80
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now 
+                                </li>
+                            </ul>
+                        </div>
+                    </div>-->
             </div>
         </div>
     </div>
@@ -94,19 +124,19 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="nav-item active"><a class="nav-link" href="trangchu.jsp">Trang Chủ</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="first">Trang Chủ</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.jsp">The Flower<br> Shop</a></li>
                     <li class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Cửa Hàng</a>
                         <ul class="dropdown-menu">
                             <li><a href="shop.html">Sidebar Shop</a></li>
-                            <li><a href="Detail.jsp">Shop Detail</a></li>
+                            <li><a href="detail">Shop Detail</a></li>
                             <li><a href="cart.html">Cart</a></li>
                             <li><a href="checkout.html">Checkout</a></li>
                             <li><a href="my-account.html">My Account</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="category.jsp">Danh mục<br> sản phẩm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="category">Danh mục<br> sản phẩm</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact-us.html">Liên Hệ</a></li>
                 </ul>
             </div>
@@ -261,7 +291,8 @@
                     <div class="button-group filter-button-group">
                         <!--                                <button class="active" data-filter="*">Tất Cả</button>
                                                         <button data-filter=".top-featured">Nổi Bật</button>
-                        -->                                <button data-filter=".best-seller">Tất Cả Các Sản Phẩm</button>
+                        -->                               
+                        <button data-filter=".best-seller">Tất Cả Các Sản Phẩm</button>
                     </div>
                 </div>
             </div>
@@ -301,7 +332,7 @@
                                             <div class="box-img-hover">
                                                 <div class="type-lb">
                                                     <p class="new">New</p>
-                                                </div>
+        </div>
                                                 <img src="${p.image}" class="img-fluid" alt="Image">
                                                 <div class="mask-icon">
                                                     <ul>
@@ -310,8 +341,8 @@
                                                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                     </ul>
                                                     <a class="cart" href="#">Thêm Vào Giỏ Hàng</a>
-                                                </div>
-                                            </div>
+    </div>
+</div>
                                             <div class="why-text">
                                                 <h4>${p.title}</h4>
                                                 <h4>${p.description}</h4>

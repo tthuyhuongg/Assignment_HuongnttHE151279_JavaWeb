@@ -7,11 +7,8 @@
 
 
 /*
-
     font-family: 'Poppins', sans-serif;
-
     font-family: 'Dosis', sans-serif;
-
 */
 
 /*------------------------------------------------------------------
@@ -307,10 +304,6 @@ p{
 .login-box .dropdown-item{
     padding: 5px 10px;
 }
-body {background-color:#eee;}
-.container-fluid {padding:50px;}
-.container{background-color:white;padding:50px;   }
-#title{font-family: 'Lobster', cursive;;}
 
 .bootstrap-select.btn-group .dropdown-menu a.dropdown-item span.dropdown-item-inner span.text{
     font-size: 13px;
@@ -2601,24 +2594,3 @@ ul.cart-list > li.total > .btn:hover{
     padding: 12px 25px;
     border: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

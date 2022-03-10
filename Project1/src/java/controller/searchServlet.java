@@ -6,7 +6,6 @@
 package controller;
 
 import DAO.ProductDAO;
-import entity.Categories;
 import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,9 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author thuy huon
+ * @author thuy huong
  */
-public class firstservlet extends HttpServlet {
+public class searchServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,20 +33,15 @@ public class firstservlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+        request.setCharacterEncoding("UTF-8");
+        /* TODO output your page here. You may use following sample code. */
+        String stxt = request.getParameter("txt");
+        ProductDAO p = new ProductDAO();
+        ArrayList<Product> lists = p.search(stxt);
+        request.setAttribute("listpro", lists);
+        request.setAttribute("note", stxt);
+        request.getRequestDispatcher("trangchu.jsp").forward(request, response);
 
-            ProductDAO p = new ProductDAO();
-            ArrayList<Product> listp = p.getAll();
-            ArrayList<Categories> listc = p.getAllCa();
-            request.setAttribute("listpro", listp);
-            request.setAttribute("listca", listc);
-            request.setCharacterEncoding("utf-8");
-//        for (Categories ca : listc) {
-//            out.println(ca);
-//        }
-            request.getRequestDispatcher("trangchu.jsp").forward(request, response);
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -77,8 +71,6 @@ public class firstservlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        response.setContentType("text/html;charset=UTF-8");
-
     }
 
     /**

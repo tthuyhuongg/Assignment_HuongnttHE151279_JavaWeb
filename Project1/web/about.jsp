@@ -1,15 +1,15 @@
 <%-- 
-    Document   : category
-    Created on : Mar 7, 2022, 12:11:56 AM
+    Document   : about
+    Created on : Mar 9, 2022, 8:42:54 PM
     Author     : thuy huong
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
     <!-- Basic -->
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,14 +18,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Site Metas -->
-        <title>Freshshop - Ecommerce Bootstrap 4 HTML Template</title>
+        <title></title>
         <meta name="keywords" content="">
         <meta name="description" content="">
         <meta name="author" content="">
 
         <!-- Site Icons -->
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -50,8 +49,8 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="custom-select-box">
-                            <select id="basic" class="selectpicker show-tick form-control" data-placeholder="VND">
-                                <option>VND</option>
+                            <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+                                <option> VND </option>
                                 <option>$ USD</option>
                                 <option>€ EUR</option>
                             </select>
@@ -62,7 +61,7 @@
                         <div class="our-link">
                             <ul>
                                 <li><a href="#"><i class="fa fa-user s_color"></i> Tài Khoản</a></li>
-                                <li><a href="#"><i class="fas fa-location-arrow"></i> Địa chỉ</a></li>
+                                <li><a href="#"><i class="fas fa-location-arrow"></i> Địa Chỉ Cửa Hàng</a></li>
                                 <li><a href="#"><i class="fas fa-headset"></i> Liên Hệ</a></li>
                             </ul>
                         </div>
@@ -76,32 +75,6 @@
                         </div>
                         <div class="text-slid-box">
                             <div id="offer-box" class="carouselTicker">
-                                <!--                                <ul class="offer-box">
-                                                                    <li>
-                                                                        <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT80
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="fab fa-opencart"></i> Off 50%! Shop Now
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="fab fa-opencart"></i> Off 50%! Shop Now 
-                                                                    </li>
-                                                                </ul>-->
                             </div>
                         </div>
                     </div>
@@ -153,7 +126,7 @@
                                     <div class="col-lg-9">
                                         <div class="input-group rounded">
                                             <form action="search" method="post">
-                                                <input name="txt" type="text"/>
+                                                <input name="txt" type="text" value="${note}"/>
                                                 <button type="submit" >
                                                     <li class="search"><i class="fa fa-search"></i></li>
                                                 </button>
@@ -224,10 +197,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2>Services</h2>
+                        <h2>The Flower Shop</h2>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Services</li>
+                            <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
+                            <li class="breadcrumb-item active">The Flower Shop</li>
                         </ul>
                     </div>
                 </div>
@@ -235,101 +208,46 @@
         </div>
         <!-- End All Title Box -->
 
-        <!-- Start Gallery  -->
-        <div class="products-box">
+        <!-- Start About Page  -->
+        <div class="about-box-main">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="title-all text-center">
-                            <h1>Danh Mục Sản Phẩm</h1>
+                    <div class="col-lg-6">
+                        <div class="banner-frame"> <img class="img-fluid" src="images/about-img.jpg" alt="" />
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="special-menu text-center">
-                            <div class="button-group filter-button-group">
-                                <button class="active" data-filter="*">Tất Cả Sản Phẩm</button>
-                                <button data-filter=".bulbs">Hoa Chúc Mừng</button>
-                                <button data-filter=".fruits">Hoa Tình Yêu</button>
-                                <button data-filter=".podded-vegetables">Hoa Chia Buồn</button>
-                                <!--                                <button data-filter=".root-and-tuberous">Root and tuberous</button>-->
-                            </div>
-                        </div>
+                    <div class="col-lg-6">
+                        <h2 class="noo-sh-title-top"> <span>The Flower Shop</span></h2>
+                        <p>Được thành lập từ năm 2010 với mục tiêu mang đến cho khách hàng trải nghiệm 
+                            tuyệt vời về một dịch vụ đặt hoa online chuyên nghiệp, 
+                            The Flower Shop đã giúp khách hàng gửi tặng 
+                            những bó hoa tươi đẹp và đầy ý nghĩa đến những người thân yêu trong tất 
+                            cả những dịp đặc biệt trong năm.
+                             The Flower Shop cung cấp dịch vụ điện hoa và đặt hoa online 24/7 
+                            giao tận nơi tại  Hà Nội và trên tất cả các tỉnh – thành phố tại Việt Nam.
+                            Với hệ thống cửa hàng hoa tươi liên kết trên khắp tất cả các tỉnh – thành phố trên toàn quốc, 
+                            The Flower Shop có thể giúp bạn gửi tặng hoa tươi cho người thân 
+                            ở bất cứ nơi đâu tại Việt Nam. 
+                            The Flower Shop cam kết mang đến cho bạn những sản phẩm hoa tươi chất lượng cao, 
+                            với mức giá tốt nhất và dịch chuyên nghiệp nhất khi sử 
+                            dụng dịch vụ đặt hoa tươi online giao tận nơi.</p>
                     </div>
                 </div>
-
-                <div class="row special-list">
-                    <c:forEach items="${listcm}" var="p">
-                        <div class="col-lg-3 col-md-6 special-grid bulbs">
-                            <div class="products-single fix">
-                                <div class="box-img-hover">
-                                    <div class="type-lb">
-                                        <p class="sale"></p>
-                                    </div>
-                                    <img src="${p.image}" class="img-fluid" alt="Image">
-                                    <div class="mask-icon">
-                                        <ul>
-                                            <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-<!--                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->
-                                        </ul>
-                                        <a class="cart" href="#">Thêm Vào Giỏ Hàng</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
-
-                    <c:forEach items="${listty}" var="p">
-                        <div class="col-lg-3 col-md-6 special-grid fruits">
-                            <div class="products-single fix">
-                                <div class="box-img-hover">                            
-                                    <img src="${p.image}" class="img-fluid" alt="Image">
-                                    <div class="mask-icon">
-                                        <ul>
-                                            <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-<!--                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>-->
-<!--                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->
-                                        </ul> 
-                                        <a class="cart" href="#">Thêm Vào Giỏ Hàng</a>
-                                    </div>
-                                </div>                        
-                            </div>
-                        </div>
-                    </c:forEach>
-
-
-                    <c:forEach items="${listcb}" var="p">
-                        <div class="col-lg-3 col-md-6 special-grid podded-vegetables">
-                            <div class="products-single fix">
-                                <div class="box-img-hover">
-                                    <img src="${p.image}" class="img-fluid" alt="Image">
-                                    <div class="mask-icon">
-                                        <ul>
-                                            <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-<!--                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>-->
-<!--                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->
-                                        </ul>
-                                        <a class="cart" href="#">Thêm Vào Giỏ Hàng</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
+                <div class="row my-4">
+                    <div class="col-12">
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- End Gallery  -->
 
         <!-- Start Instagram Feed  -->
-        <div class="instagram-box">
+ <div class="instagram-box">
             <div class="main-instagram owl-carousel owl-theme">
                 <div class="item">
                     <div class="ins-inner-box">
                         <img src="images/11.jpg"width="696px"height="300px" alt="" />
                         <div class="hov-in">
-                            <a><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
