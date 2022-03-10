@@ -65,7 +65,7 @@
                                 <li><a href="#"><i class="fa fa-user s_color"></i> Tài Khoản</a></li>
                                 <li><a href="#"><i class="fas fa-location-arrow"></i> Địa chỉ</a></li>
                                 <li><a href="#"><i class="fas fa-headset"></i> Liên Hệ</a></li>
-                                <li><a href="new.jsp"><i class="fas fa-headset"></i> Đăng Ký </a></li>
+                                <li><a href="singup.jsp"><i class="fas fa-headset"></i> Đăng Ký </a></li>
                                 <li><a href="Login.jsp"><i class="fas fa-headset"></i> Đăng Nhập</a></li>
                             </ul>
                         </div>
