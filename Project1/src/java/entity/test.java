@@ -16,14 +16,17 @@ public class test {
     public static void main(String[] args) {
         ProductDAO p = new ProductDAO();
 //        ArrayList<Product> a = p.getHCM("1");
-//        ArrayList<Categories> a = p.getAllCa();
-//        for (Categories pro : a) {
-//            System.out.println(pro);
-//        }
+        ArrayList<Categories> a = p.getAllCa();
+        for (Categories pro : a) {
+            System.out.println(pro);
+        }
 //        for (Product pro : a) {
 //            System.out.println(pro);
 //        }
 //    Product pa = p.getsp("H001");
 //        System.out.println(pa);
+//        Account a =p.login("Admin", "Admin12345");
+//        System.out.println(a);
+//        p.signup("thuyhuong", "huong1234");
     }
 }
