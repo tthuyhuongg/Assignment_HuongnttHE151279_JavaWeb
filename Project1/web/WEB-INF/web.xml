@@ -28,6 +28,14 @@
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>controller.LogoutServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>shopServlet</servlet-name>
+        <servlet-class>controller.shopServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cardServlet</servlet-name>
+        <servlet-class>controller.cardServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>firstservlet</servlet-name>
         <url-pattern>/first</url-pattern>
@@ -55,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>shopServlet</servlet-name>
+        <url-pattern>/shop</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cardServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
