@@ -109,9 +109,9 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Cửa Hàng</a>
                             <ul class="dropdown-menu">
-                                <li><a href="shop.html">Sidebar Shop</a></li>
+                                <li><a href="shop.jsp">Sidebar Shop</a></li>
                                 <li><a href="detail">Shop Detail</a></li>
-                                <li><a href="cart.html">Cart</a></li>
+                                <li><a href="cart">Cart</a></li>
                                 <li><a href="checkout.html">Checkout</a></li>
                                 <li><a href="my-account.html">My Account</a></li>
                             </ul>
@@ -139,7 +139,7 @@
                                 </div>
 
                                 <div class="col-lg-3 ">
-                                    <li class="side-menu"><a href="#">
+                                    <li class="side-menu"><a href="cart">
                                             <i class="fa fa-shopping-bag"></i>
                                             <span class="badge">3</span>
                                             <p>Giỏ Hàng</p>
@@ -293,7 +293,7 @@
                                         <!--                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>-->
                                         <!--                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->
                                     </ul>
-                                    <a class="cart" href="#">Thêm Vào Giỏ Hàng</a>
+                                    <a class="cart" href="cart?idsp=${p.masp}">Thêm Vào Giỏ Hàng</a>
                                 </div>
                             </div>
                             <div class="why-text">
