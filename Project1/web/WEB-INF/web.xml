@@ -33,8 +33,24 @@
         <servlet-class>controller.shopServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>cardServlet</servlet-name>
-        <servlet-class>controller.cardServlet</servlet-class>
+        <servlet-name>managerServlet</servlet-name>
+        <servlet-class>controller.managerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteServlet</servlet-name>
+        <servlet-class>controller.deleteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cartServlet</servlet-name>
+        <servlet-class>controller.cartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>showCartServlet</servlet-name>
+        <servlet-class>controller.showCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>contactServlet</servlet-name>
+        <servlet-class>controller.contactServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>firstservlet</servlet-name>
@@ -69,8 +85,24 @@
         <url-pattern>/shop</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>cardServlet</servlet-name>
-        <url-pattern>/cart</url-pattern>
+        <servlet-name>managerServlet</servlet-name>
+        <url-pattern>/manager</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteServlet</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cartServlet</servlet-name>
+        <url-pattern>/cartt</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>showCartServlet</servlet-name>
+        <url-pattern>/show</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>contactServlet</servlet-name>
+        <url-pattern>/contact</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
