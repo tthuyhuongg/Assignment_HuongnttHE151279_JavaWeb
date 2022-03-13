@@ -12,10 +12,7 @@
 <html lang="en">
     <!-- Basic -->
     <head>
-        <%
-            Product t = (Product) request.getAttribute("listc");
-            request.getCharacterEncoding();
-        %>
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -49,9 +46,7 @@
     </head>
 
     <body>
-        <%
-            request.getCharacterEncoding();
-        %>
+
         <!-- Start Main Top -->
         <div class="main-top">
             <div class="container-fluid">
@@ -62,9 +57,7 @@
                         </div>
                         <div class="our-link">
                             <ul>
-                                <li><a href="#"><i class="fa fa-user s_color"></i> Tài Khoản</a></li>
-                                <li><a href="#"><i class="fas fa-location-arrow"></i> Địa chỉ</a></li>
-                                <li><a href="#"><i class="fas fa-headset"></i> Liên Hệ</a></li>
+                                <li><a href="contact.jsp"><i class="fas fa-headset"></i> Liên Hệ</a></li>
                                     <c:if test="${sessionScope.account != null}">
                                     <li><a href="#">${sessionScope.account.user}</a></li>
                                     <li><a href="logout"><i class="fas fa-headset"></i> Đăng Xuất</a></li>
@@ -76,7 +69,7 @@
                                     <li><a href="#"><i class="fa fa-user s_color"></i>Người Dùng</a></li>
                                     </c:if>
                                     <c:if test="${sessionScope.account.isAdmin == 0}">
-                                    <li><a href="#"><i class="fa fa-user s_color"></i>Người Quản Lý</a></li>
+                                    <li><a href="manager"><i class="fa fa-user s_color"></i>Người Quản Lý</a></li>
                                     </c:if>
                             </ul>
                         </div>
@@ -111,13 +104,12 @@
                             <ul class="dropdown-menu">
                                 <li><a href="shop.jsp">Sidebar Shop</a></li>
                                 <li><a href="detail">Shop Detail</a></li>
-                                <li><a href="cart">Cart</a></li>
+                                <li><a href="Cart.jsp">Cart</a></li>
                                 <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="category">Danh mục<br> sản phẩm</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Liên Hệ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.jsp">Liên Hệ</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -139,7 +131,7 @@
                                 </div>
 
                                 <div class="col-lg-3 ">
-                                    <li class="side-menu"><a href="cart">
+                                    <li class="side-menu"><a href="Cart.jsp">
                                             <i class="fa fa-shopping-bag"></i>
                                             <span class="badge">3</span>
                                             <p>Giỏ Hàng</p>
@@ -293,7 +285,7 @@
                                         <!--                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>-->
                                         <!--                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->
                                     </ul>
-                                    <a class="cart" href="cart?idsp=${p.masp}">Thêm Vào Giỏ Hàng</a>
+                                    <a class="cart" href="cartt?idsp=${p.masp}">Thêm Vào Giỏ Hàng</a>
                                 </div>
                             </div>
                             <div class="why-text">
