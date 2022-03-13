@@ -15,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -40,7 +41,8 @@ public class firstservlet extends HttpServlet {
             ProductDAO p = new ProductDAO();
             ArrayList<Product> listp = p.getAll();
             ArrayList<Categories> listc = p.getAllCa();
-            request.setAttribute("listpro", listp);
+            HttpSession session = request.getSession();
+            session.setAttribute("listpro", listp);
             request.setAttribute("listca", listc);
             request.setCharacterEncoding("utf-8");
 //        for (Categories ca : listc) {
