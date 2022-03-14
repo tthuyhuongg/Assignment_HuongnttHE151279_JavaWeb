@@ -52,6 +52,18 @@
         <servlet-name>contactServlet</servlet-name>
         <servlet-class>controller.contactServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>carttServlet</servlet-name>
+        <servlet-class>controller.carttServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>quantityServlet</servlet-name>
+        <servlet-class>controller.quantityServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>managerSv</servlet-name>
+        <servlet-class>controller.managerSv</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>firstservlet</servlet-name>
         <url-pattern>/first</url-pattern>
@@ -103,6 +115,18 @@
     <servlet-mapping>
         <servlet-name>contactServlet</servlet-name>
         <url-pattern>/contact</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>carttServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>quantityServlet</servlet-name>
+        <url-pattern>/quantity</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>managerSv</servlet-name>
+        <url-pattern>/deletemanager</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
