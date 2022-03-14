@@ -6,12 +6,17 @@
 package DAO;
 
 import entity.Account;
+import entity.Cart;
 import entity.Categories;
+import entity.Customer;
+import entity.Item;
 import entity.Product;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -98,7 +103,8 @@ public class ProductDAO extends BaseDAO<Product> {
                         rs.getString("Picture"),
                         rs.getFloat("price"),
                         rs.getString("title"),
-                        rs.getString("Description"));
+                        rs.getString("Description"),
+                        rs.getInt("quantity"));
             }
         } catch (SQLException e) {
         }
@@ -174,6 +180,50 @@ public class ProductDAO extends BaseDAO<Product> {
             ps.executeUpdate();
         } catch (Exception e) {
         }
+    }
+
+    public void delete(String msp) {
+        String sql = "delete from Product where masp =?";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, msp);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+
+    public void addoder(Customer cus, Cart cart) throws SQLException {
+        LocalDate date = java.time.LocalDate.now();
+        String datet = date.toString();
+        String sql = "insert into Oder(cusid,orderdate,totalmoney) values(?,?,?)";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, datet);
+            ps.setInt(2, cus.getId());
+            ps.setDouble(3, cart.total());
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        String sql1 = "select top 1 oderid from Oder order by oderid desc ";
+        try {
+            PreparedStatement ps1 = connection.prepareStatement(sql1);
+            rs = ps1.executeQuery();
+            while (rs.next()) {
+                int oid = rs.getInt(1);
+                for (Item o : cart.getList()) {
+                    String sql2 = "insert into Oderdetail(masp,price,Quantity) values\n"
+                            + "(?,?,?,?)";
+                    PreparedStatement ps2 = connection.prepareStatement(sql2);
+                    ps2.setInt(1, oid);
+                    ps2.setString(2, o.getSp().getMasp());
+                    ps2.setDouble(3, o.getPrice());
+                    ps2.setInt(4, o.getQuantity());
+                    ps2.executeUpdate();
+                }
+            }
+        } catch (Exception e) {
+        }
+
     }
 
 }
