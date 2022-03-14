@@ -4,6 +4,7 @@
     Author     : thuy huong
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!DOCTYPE html>
@@ -52,8 +53,6 @@
                         <div class="custom-select-box">
                             <select id="basic" class="selectpicker show-tick form-control" data-placeholder="VND">
                                 <option> VND </option>
-                                <option>$ USD</option>
-                                <option>€ EUR</option>
                             </select>
                         </div>
                         <div class="right-phone-box">
@@ -61,9 +60,7 @@
                         </div>
                         <div class="our-link">
                             <ul>
-                                <li><a href="#"><i class="fa fa-user s_color"></i> Tài Khoản</a></li>
-                                <li><a href="#"><i class="fas fa-location-arrow"></i> Địa Chỉ Cửa Hàng</a></li>
-                                <li><a href="#"><i class="fas fa-headset"></i> Liên Hệ</a></li>
+                                <li><a href="contact.jsp"><i class="fas fa-headset"></i> Liên Hệ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -76,32 +73,32 @@
                         </div>
                         <div class="text-slid-box">
                             <div id="offer-box" class="carouselTicker">
-<!--                                <ul class="offer-box">
-                                    <li>
-                                        <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT80
-                                    </li>
-                                    <li>
-                                        <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                                    </li>
-                                    <li>
-                                        <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
-                                    </li>
-                                    <li>
-                                        <i class="fab fa-opencart"></i> Off 50%! Shop Now
-                                    </li>
-                                    <li>
-                                        <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
-                                    </li>
-                                    <li>
-                                        <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                                    </li>
-                                    <li>
-                                        <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
-                                    </li>
-                                    <li>
-                                        <i class="fab fa-opencart"></i> Off 50%! Shop Now 
-                                    </li>
-                                </ul>-->
+                                <!--                                <ul class="offer-box">
+                                                                    <li>
+                                                                        <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT80
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fab fa-opencart"></i> Off 50%! Shop Now
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fab fa-opencart"></i> Off 50%! Shop Now 
+                                                                    </li>
+                                                                </ul>-->
                             </div>
                         </div>
                     </div>
@@ -126,66 +123,55 @@
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
-                        <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li class="nav-item active"><a class="nav-link" href="index.html">Trang Chủ</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">The Flower Shop</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Cửa Hàng</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="shop.html">Sidebar Shop</a></li>
-                                    <li><a href="shop-detail.html">Shop Detail</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="my-account.html">My Account</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="gallery.html">Danh mục sản phẩm</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact-us.html">Liên Hệ</a></li>
-                        </ul>
-                    </div>
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="nav-item active"><a class="nav-link" href="first">Trang Chủ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.jsp">The Flower<br> Shop</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Cửa Hàng</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="shop.jsp">Sidebar Shop</a></li>
+                                <li><a href="detail">Shop Detail</a></li>
+                                <li><a href="Cart.jsp">Cart</a></li>
+                                <li><a href="checkout.html">Checkout</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="category">Danh mục<br> sản phẩm</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.jsp">Liên Hệ</a></li>
+                    </ul>
+                </div>
                     <!-- /.navbar-collapse -->
 
                     <!-- Start Atribute Navigation -->
-                    <div class="attr-nav">
+                         <div class="attr-nav">
+                    <div class="container">
                         <ul>
-                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                            <li class="side-menu"><a href="#">
-                                    <i class="fa fa-shopping-bag"></i>
-                                    <span class="badge">3</span>
-                                    <p>My Cart</p>
-                                </a></li>
+                            <div class="row">
+                                <div class="col-lg-9">
+                                    <div class="input-group rounded">
+                                        <form action="search" method="post">
+                                            <input name="txt" type="text" value="${note}"/>
+                                            <button type="submit" >
+                                                <li class="search"><i class="fa fa-search"></i></li>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 ">
+                                    <li class="side-menu"><a href="Cart.jsp">
+                                            <i class="fa fa-shopping-bag"></i>
+                                            <span class="badge">3</span>
+                                            <p>Giỏ Hàng</p>
+                                        </a></li>
+                                </div>
+                            </div>
                         </ul>
                     </div>
+                </div>
                     <!-- End Atribute Navigation -->
                 </div>
                 <!-- Start Side Menu -->
-                <div class="side">
-                    <a href="#" class="close-side"><i class="fa fa-times"></i></a>
-                    <li class="cart-box">
-                        <ul class="cart-list">
-                            <li>
-                                <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Delica omtantur </a></h6>
-                                <p>1x - <span class="price">$80.00</span></p>
-                            </li>
-                            <li>
-                                <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Omnes ocurreret</a></h6>
-                                <p>1x - <span class="price">$60.00</span></p>
-                            </li>
-                            <li>
-                                <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Agam facilisis</a></h6>
-                                <p>1x - <span class="price">$40.00</span></p>
-                            </li>
-                            <li class="total">
-                                <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                                <span class="float-right"><strong>Total</strong>: $180.00</span>
-                            </li>
-                        </ul>
-                    </li>
-                </div>
+                
                 <!-- End Side Menu -->
             </nav>
             <!-- End Navigation -->
@@ -238,78 +224,38 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="thumbnail-img">
-                                            <a href="#">
-                                                <img class="img-fluid" src="images/img-pro-01.jpg" alt="" />
-                                            </a>
-                                        </td>
-                                        <td class="name-pr">
-                                            <a href="#">
-                                                Lorem ipsum dolor sit amet
-                                            </a>
-                                        </td>
-                                        <td class="price-pr">
-                                            <p>$ 80.0</p>
-                                        </td>
-                                        <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                        <td class="total-pr">
-                                            <p>$ 80.0</p>
-                                        </td>
-                                        <td class="remove-pr">
-                                            <a href="#">
-                                                <i class="fas fa-times"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="thumbnail-img">
-                                            <a href="#">
-                                                <img class="img-fluid" src="images/img-pro-02.jpg" alt="" />
-                                            </a>
-                                        </td>
-                                        <td class="name-pr">
-                                            <a href="#">
-                                                Lorem ipsum dolor sit amet
-                                            </a>
-                                        </td>
-                                        <td class="price-pr">
-                                            <p>$ 60.0</p>
-                                        </td>
-                                        <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                        <td class="total-pr">
-                                            <p>$ 80.0</p>
-                                        </td>
-                                        <td class="remove-pr">
-                                            <a href="#">
-                                                <i class="fas fa-times"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="thumbnail-img">
-                                            <a href="#">
-                                                <img class="img-fluid" src="images/img-pro-03.jpg" alt="" />
-                                            </a>
-                                        </td>
-                                        <td class="name-pr">
-                                            <a href="#">
-                                                Lorem ipsum dolor sit amet
-                                            </a>
-                                        </td>
-                                        <td class="price-pr">
-                                            <p>$ 30.0</p>
-                                        </td>
-                                        <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                        <td class="total-pr">
-                                            <p>$ 80.0</p>
-                                        </td>
-                                        <td class="remove-pr">
-                                            <a href="#">
-                                                <i class="fas fa-times"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    <c:set var="o" value="${sessionScope.cart}"/>
+                                    <c:set var="t" value="0"/>
+                                    <c:forEach items="${o.list}" var="p">
+                                        <tr>
+                                            <td class="thumbnail-img">
+                                                <a href="#">
+                                                    <img class="img-fluid" src="${p.sp.image}" alt="" />
+                                                </a>
+                                            </td>
+                                            <td class="name-pr">
+                                                <a href="#">
+                                                    ${p.sp.namesp}
+                                                </a>
+                                            </td>
+                                            <td class="price-pr">
+                                                <p>${p.price}</p>
+                                            </td>
+                                            <td>
+                                                <button><a href="quantity?num=-1&msp=${p.sp.masp}">-</a></button>
+                                                <input type="button" readonly value="${p.quantity}"/>
+                                                <button><a href="quantity?num=1&msp=${p.sp.masp}">+</a></button>
+                                            </td>
+                                            <td class="total-pr">
+                                                <p>${p.quantity * p.price}</p>
+                                            </td>
+                                            <td class="remove-pr">
+                                                <a href="delete?msp=${p.sp.masp}">
+                                                    <i class="fas fa-times"></i>
+                                                </a>
+                                            </td>
+                                        </tr> 
+                                    </c:forEach>
                                 </tbody>
                             </table>
                         </div>
@@ -318,14 +264,14 @@
 
                 <div class="row my-5">
                     <div class="col-lg-6 col-sm-6">
-                        <div class="coupon-box">
+<!--                        <div class="coupon-box">
                             <div class="input-group input-group-sm">
                                 <input class="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text">
                                 <div class="input-group-append">
                                     <button class="btn btn-theme" type="button">Apply Coupon</button>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                     <div class="col-lg-6 col-sm-6">
                         <div class="update-box">
@@ -338,36 +284,14 @@
                     <div class="col-lg-8 col-sm-12"></div>
                     <div class="col-lg-4 col-sm-12">
                         <div class="order-box">
-                            <h3>Order summary</h3>
-                            <div class="d-flex">
-                                <h4>Sub Total</h4>
-                                <div class="ml-auto font-weight-bold"> $ 130 </div>
-                            </div>
-                            <div class="d-flex">
-                                <h4>Discount</h4>
-                                <div class="ml-auto font-weight-bold"> $ 40 </div>
-                            </div>
-                            <hr class="my-1">
-                            <div class="d-flex">
-                                <h4>Coupon Discount</h4>
-                                <div class="ml-auto font-weight-bold"> $ 10 </div>
-                            </div>
-                            <div class="d-flex">
-                                <h4>Tax</h4>
-                                <div class="ml-auto font-weight-bold"> $ 2 </div>
-                            </div>
-                            <div class="d-flex">
-                                <h4>Shipping Cost</h4>
-                                <div class="ml-auto font-weight-bold"> Free </div>
-                            </div>
-                            <hr>
+                            <h3>Đơn Đặt Hàng</h3>
                             <div class="d-flex gr-total">
-                                <h5>Grand Total</h5>
-                                <div class="ml-auto h5"> $ 388 </div>
+                                <h5>Tổng Thanh Toán</h5>
+                                <div class="ml-auto h5">${o.total()}</div>
                             </div>
                             <hr> </div>
                     </div>
-                    <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">Checkout</a> </div>
+                    <div class="col-12 d-flex shopping-box"><a href="checkout.jsp" class="ml-auto btn hvr-hover">Checkout</a> </div>
                 </div>
 
             </div>
@@ -375,7 +299,7 @@
         <!-- End Cart -->
 
         <!-- Start Instagram Feed  -->
-  <div class="instagram-box">
+        <div class="instagram-box">
             <div class="main-instagram owl-carousel owl-theme">
                 <div class="item">
                     <div class="ins-inner-box">
