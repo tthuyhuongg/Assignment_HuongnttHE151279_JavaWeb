@@ -51,8 +51,6 @@
                         <div class="custom-select-box">
                             <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
                                 <option> VND </option>
-                                <option>$ USD</option>
-                                <option>€ EUR</option>
                             </select>
                         </div>
                         <div class="right-phone-box">
@@ -60,9 +58,7 @@
                         </div>
                         <div class="our-link">
                             <ul>
-                                <li><a href="#"><i class="fa fa-user s_color"></i> Tài Khoản</a></li>
-                                <li><a href="#"><i class="fas fa-location-arrow"></i> Địa Chỉ Cửa Hàng</a></li>
-                                <li><a href="#"><i class="fas fa-headset"></i> Liên Hệ</a></li>
+                                <li><a href="contact.jsp"><i class="fas fa-headset"></i> Liên Hệ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -109,11 +105,10 @@
                                     <li><a href="detail">Shop Detail</a></li>
                                     <li><a href="cart.html">Cart</a></li>
                                     <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="my-account.html">My Account</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="category">Danh mục<br> sản phẩm</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact-us.html">Liên Hệ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.jsp">Liên Hệ</a></li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
