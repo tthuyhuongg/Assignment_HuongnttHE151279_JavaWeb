@@ -16,17 +16,19 @@ public class Product {
     private double price;
     private String title;
     private String description;
+    private int quantity;
 
     public Product() {
     }
 
-    public Product(String masp, String namesp, String image, double price, String title, String description) {
+    public Product(String masp, String namesp, String image, double price, String title, String description, int quantity) {
         this.masp = masp;
         this.namesp = namesp;
         this.image = image;
         this.price = price;
         this.title = title;
         this.description = description;
+        this.quantity = quantity;
     }
 
     public String getMasp() {
@@ -77,9 +79,17 @@ public class Product {
         this.description = description;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     @Override
     public String toString() {
-        return "Product{" + "masp=" + masp + ", namesp=" + namesp + ", image=" + image + ", price=" + price + ", title=" + title + ", description=" + description + '}';
+        return "Product{" + "masp=" + masp + ", namesp=" + namesp + ", image=" + image + ", price=" + price + ", title=" + title + ", description=" + description + ", quantity=" + quantity + '}';
     }
-   
+ 
 }
