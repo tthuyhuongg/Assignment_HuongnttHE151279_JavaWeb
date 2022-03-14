@@ -129,11 +129,11 @@
                                         </form>
                                     </div>
                                 </div>
-
+                           <c:set var="size" value="${sessionScope.size}"/>
                                 <div class="col-lg-3 ">
                                     <li class="side-menu"><a href="Cart.jsp">
                                             <i class="fa fa-shopping-bag"></i>
-                                            <span class="badge">3</span>
+                                            <span class="badge">${size}</span>
                                             <p>Giỏ Hàng</p>
                                         </a></li>
                                 </div>
@@ -144,32 +144,7 @@
                 <!-- End Atribute Navigation -->
             </div>
             <!-- Start Side Menu -->
-            <div class="side">
-                <a href="#" class="close-side"><i class="fa fa-times"></i></a>
-                <li class="cart-box">
-                    <ul class="cart-list">
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Delica omtantur </a></h6>
-                            <p>1x - <span class="price">$80.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Omnes ocurreret</a></h6>
-                            <p>1x - <span class="price">$60.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Agam facilisis</a></h6>
-                            <p>1x - <span class="price">$40.00</span></p>
-                        </li>
-                        <li class="total">
-                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                            <span class="float-right"><strong>Total</strong>: $180.00</span>
-                        </li>
-                    </ul>
-                </li>
-            </div>
+            
             <!-- End Side Menu -->
         </nav>
         <!-- End Navigation -->
@@ -285,7 +260,7 @@
                                         <!--                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>-->
                                         <!--                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->
                                     </ul>
-                                    <a class="cart" href="cartt?idsp=${p.masp}">Thêm Vào Giỏ Hàng</a>
+                                    <a class="cart" href="cart?idsp=${p.masp}">Thêm Vào Giỏ Hàng</a>
                                 </div>
                             </div>
                             <div class="why-text">
@@ -298,56 +273,6 @@
                     </div>
                 </c:forEach>
 
-                <!--                    <c:forEach items="${listty}" var="p">
-                                        <div class="col-lg-3 col-md-6 special-grid top-featured">
-                                            <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="new">New</p>
-            </div>
-                                                    <img src="${p.image}" class="img-fluid" alt="Image">
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                                                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                                                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                        </ul>
-                                                        <a class="cart" href="#">Thêm Vào Giỏ Hàng</a>
-        </div>
-    </div>
-                                                <div class="why-text">
-                                                    <h4>${p.title}</h4>
-                                                    <h4>${p.description}</h4>
-                                                    <h5>${p.price}</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                </c:forEach>
-                <c:forEach items="${listcb}" var="p">
-                    <div class="col-lg-3 col-md-6 special-grid top-featured">
-                        <div class="products-single fix">
-                            <div class="box-img-hover">
-                                <div class="type-lb">
-                                    <p class="sale"></p>
-                                </div>
-                                <img src="${p.image}" class="img-fluid" alt="Image">
-                                <div class="mask-icon">
-                                    <ul>
-                                        <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                    </ul>
-                                    <a class="cart" href="#">Thêm Vào Giỏ Hàng</a>
-                                </div>
-                            </div>
-                            <div class="why-text">
-                                <h4>${p.title}</h4>
-                                <h4>${p.description}</h4>
-                                <h5>${p.price}</h5>
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>  -->
             </div>
         </div>
     </div>

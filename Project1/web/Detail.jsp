@@ -127,20 +127,19 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li class="nav-item active"><a class="nav-link" href="trangchu.jsp">Trang Chủ</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">The Flower Shop</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="first">Trang Chủ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.jsp">The Flower Shop</a></li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Cửa Hàng</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="shop.html">Sidebar Shop</a></li>
-                                    <li><a href="Detail.jsp">Chi tiết Sản Phẩm</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
+                                    <li><a href="shop.jsp">Sidebar Shop</a></li>
+                                    <li><a href="detail">Chi tiết Sản Phẩm</a></li>
+                                    <li><a href="Cart.jsp">Cart</a></li>
                                     <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="my-account.html">My Account</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="category.jsp">Danh mục sản phẩm</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact-us.html">Liên Hệ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="category">Danh mục sản phẩm</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.jsp">Liên Hệ</a></li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
@@ -280,8 +279,8 @@
 
                             <div class="price-box-bar">
                                 <div class="cart-and-bay-btn">
-                                    <a class="btn hvr-hover" data-fancybox-close="" href="#">Mua</a>
-                                    <a class="btn hvr-hover" data-fancybox-close="" href="#">Thêm Vào Giỏ Hàng</a>
+                                    <a class="btn hvr-hover" data-fancybox-close="" href="buy?idsp=${p.masp}">Mua</a>
+                                    <a class="btn hvr-hover" data-fancybox-close="" href="cart?idsp=${p.masp}">Thêm Vào Giỏ Hàng</a>
                                 </div>
                             </div>
 

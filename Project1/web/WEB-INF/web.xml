@@ -64,6 +64,18 @@
         <servlet-name>managerSv</servlet-name>
         <servlet-class>controller.managerSv</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>buyServlet</servlet-name>
+        <servlet-class>controller.buyServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>editServlet</servlet-name>
+        <servlet-class>controller.editServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addServlet</servlet-name>
+        <servlet-class>controller.addServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>firstservlet</servlet-name>
         <url-pattern>/first</url-pattern>
@@ -127,6 +139,18 @@
     <servlet-mapping>
         <servlet-name>managerSv</servlet-name>
         <url-pattern>/deletemanager</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>buyServlet</servlet-name>
+        <url-pattern>/buy</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>editServlet</servlet-name>
+        <url-pattern>/edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addServlet</servlet-name>
+        <url-pattern>/add</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
