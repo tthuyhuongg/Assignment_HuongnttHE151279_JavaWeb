@@ -235,10 +235,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="special-menu text-center">
-                        <div class="button-group filter-button-group">
-                            <!--                                <button class="active" data-filter="*">Tất Cả</button>
-                                                            <button data-filter=".top-featured">Nổi Bật</button>
-                            -->                               
+                        <div class="button-group filter-button-group">                            
                             <button data-filter=".best-seller">Tất Cả Các Sản Phẩm</button>
                         </div>
                     </div>

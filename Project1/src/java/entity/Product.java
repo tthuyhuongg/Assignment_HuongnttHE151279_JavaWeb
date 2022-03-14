@@ -22,11 +22,12 @@ public class Product {
     private int spkm;
     private double pricekm;
     private int quantity;
+    private int idcate;
 
     public Product() {
     }
 
-    public Product(String masp, String namesp, String image, double price, String title, String description, String date, int spkm, double pricekm, int quantity) {
+    public Product(String masp, String namesp, String image, double price, String title, String description, String date, int spkm, double pricekm, int quantity, int idcate) {
         this.masp = masp;
         this.namesp = namesp;
         this.image = image;
@@ -37,7 +38,10 @@ public class Product {
         this.spkm = spkm;
         this.pricekm = pricekm;
         this.quantity = quantity;
+        this.idcate = idcate;
     }
+
+   
 
     
 
@@ -121,6 +125,15 @@ public class Product {
         this.pricekm = pricekm;
     }
 
+    public int getIdcate() {
+        return idcate;
+    }
+
+    public void setIdcate(int idcate) {
+        this.idcate = idcate;
+    }
+
+    
     @Override
     public String toString() {
         return "Product{" + "masp=" + masp + ", namesp=" + namesp + ", image=" + image + ", price=" + price + ", title=" + title + ", description=" + description + ", date=" + date + ", spkm=" + spkm + ", pricekm=" + pricekm + ", quantity=" + quantity + '}';

@@ -108,7 +108,8 @@ public class ProductDAO extends BaseDAO<Product> {
                         rs.getString("dateup"),
                         rs.getInt("Pkm"),
                         rs.getDouble("pricekm"),
-                        rs.getInt("quantity"));
+                        rs.getInt("quantity"),
+                        rs.getInt("Id"));
             }
         } catch (SQLException e) {
         }
@@ -197,7 +198,7 @@ public class ProductDAO extends BaseDAO<Product> {
         }
     }
 
-    public void editsp(String msp, String name, String image, double price, String title, String des, String date, int pkm, double giakm, int quan) {
+    public void editsp(String msp, String name, String image, double price, String title, String des, String date, int pkm, double giakm, int quan, int caid) {
         String sql = "UPDATE [projectt].[dbo].[Product]\n"
                 + "   SET [Name] =?\n"
                 + "      ,[Picture] =?\n"
@@ -208,6 +209,7 @@ public class ProductDAO extends BaseDAO<Product> {
                 + "      ,[Pkm] =?\n"
                 + "      ,[pricekm] = ?\n"
                 + "      ,[quantity] =?\n"
+                + "      ,[Id] =?\n"
                 + " WHERE masp=?";
         try {
             ps = connection.prepareStatement(sql);
@@ -220,11 +222,33 @@ public class ProductDAO extends BaseDAO<Product> {
             ps.setInt(7, pkm);
             ps.setDouble(8, giakm);
             ps.setInt(9, quan);
-            ps.setString(10, msp);
+            ps.setInt(10, caid);
+            ps.setString(11, msp);
             ps.executeUpdate();
         } catch (Exception e) {
         }
 
+    }
+
+    public void addproduct(String masp, String name, String image, double price, String title, String des, String date, int pkm, double pricekm, int quan,int id) {
+        String sql = "insert into Product(masp,Name,Picture,price,title,[Description],dateup,Pkm,pricekm,quantity,Id) values\n"
+                + "(?,?,?,?,?,?,?,?,?,?,?)";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setString(1,masp);
+            ps.setString(2,name);
+            ps.setString(3,image);
+            ps.setDouble(4,price);
+            ps.setString(5,title);
+            ps.setString(6,des);
+            ps.setString(7,date);
+            ps.setInt(8,pkm);
+            ps.setDouble(9,pricekm);
+            ps.setInt(10, quan);
+            ps.setInt(11, id);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
     }
 
     public void addoder(Customer cus, Cart cart) throws SQLException {

@@ -6,9 +6,11 @@
 package controller;
 
 import DAO.ProductDAO;
+import entity.Categories;
 import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -51,6 +53,8 @@ public class editServlet extends HttpServlet {
         String masp = request.getParameter("msp");
         ProductDAO d = new ProductDAO();
         Product p = d.getsp(masp);
+        ArrayList<Categories> c = d.getAllCa();
+        request.setAttribute("listC", c);
         request.setAttribute("listedit", p);
         request.getRequestDispatcher("Editmanager.jsp").forward(request, response);
     }
@@ -75,12 +79,13 @@ public class editServlet extends HttpServlet {
         String title = request.getParameter("title");
         String des = request.getParameter("des");
         String date = request.getParameter("date");
+        int caid = Integer.parseInt(request.getParameter("categorycaid"));
         int spkm = Integer.parseInt(request.getParameter("spkm")) ;
         double giakm = Double.parseDouble(request.getParameter("pricekm"));
         int quantity = Integer.parseInt(request.getParameter("quantity")) ;
         
         ProductDAO p = new ProductDAO();
-        p.editsp(msp, name, image, price, title, des, date, spkm, giakm, quantity);
+        p.editsp(msp, name, image, price, title, des, date, spkm, giakm, quantity,caid);
         
         request.setCharacterEncoding("utf-8");
         response.sendRedirect("manager");
