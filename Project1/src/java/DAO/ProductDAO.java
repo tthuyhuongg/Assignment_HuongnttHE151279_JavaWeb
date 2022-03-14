@@ -5,6 +5,7 @@
  */
 package DAO;
 
+import com.sun.org.apache.xerces.internal.xs.PSVIProvider;
 import entity.Account;
 import entity.Cart;
 import entity.Categories;
@@ -104,6 +105,9 @@ public class ProductDAO extends BaseDAO<Product> {
                         rs.getFloat("price"),
                         rs.getString("title"),
                         rs.getString("Description"),
+                        rs.getString("dateup"),
+                        rs.getInt("Pkm"),
+                        rs.getDouble("pricekm"),
                         rs.getInt("quantity"));
             }
         } catch (SQLException e) {
@@ -183,13 +187,44 @@ public class ProductDAO extends BaseDAO<Product> {
     }
 
     public void delete(String msp) {
-        String sql = "delete from Product where masp =?";
+        String sql = "DELETE FROM [projectt].[dbo].[Product]\n"
+                + "      WHERE masp = ?";
         try {
             ps = connection.prepareStatement(sql);
             ps.setString(1, msp);
             ps.executeUpdate();
         } catch (Exception e) {
         }
+    }
+
+    public void editsp(String msp, String name, String image, double price, String title, String des, String date, int pkm, double giakm, int quan) {
+        String sql = "UPDATE [projectt].[dbo].[Product]\n"
+                + "   SET [Name] =?\n"
+                + "      ,[Picture] =?\n"
+                + "      ,[price] =?\n"
+                + "      ,[title] =?\n"
+                + "      ,[Description] =?\n"
+                + "      ,[dateup] =?\n"
+                + "      ,[Pkm] =?\n"
+                + "      ,[pricekm] = ?\n"
+                + "      ,[quantity] =?\n"
+                + " WHERE masp=?";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, name);
+            ps.setString(2, image);
+            ps.setDouble(3, price);
+            ps.setString(4, title);
+            ps.setString(5, des);
+            ps.setString(6, date);
+            ps.setInt(7, pkm);
+            ps.setDouble(8, giakm);
+            ps.setInt(9, quan);
+            ps.setString(10, msp);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+
     }
 
     public void addoder(Customer cus, Cart cart) throws SQLException {
