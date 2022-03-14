@@ -29,10 +29,6 @@
         <servlet-class>controller.LogoutServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>shopServlet</servlet-name>
-        <servlet-class>controller.shopServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>managerServlet</servlet-name>
         <servlet-class>controller.managerServlet</servlet-class>
     </servlet>
@@ -63,10 +59,6 @@
     <servlet>
         <servlet-name>managerSv</servlet-name>
         <servlet-class>controller.managerSv</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>buyServlet</servlet-name>
-        <servlet-class>controller.buyServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>editServlet</servlet-name>
@@ -105,10 +97,6 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>shopServlet</servlet-name>
-        <url-pattern>/shop</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>managerServlet</servlet-name>
         <url-pattern>/manager</url-pattern>
     </servlet-mapping>
@@ -139,10 +127,6 @@
     <servlet-mapping>
         <servlet-name>managerSv</servlet-name>
         <url-pattern>/deletemanager</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>buyServlet</servlet-name>
-        <url-pattern>/buy</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>editServlet</servlet-name>

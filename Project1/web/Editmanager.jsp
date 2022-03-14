@@ -96,7 +96,7 @@
                                     <li><a href="shop.jsp">Sidebar Shop</a></li>
                                     <li><a href="detail">Shop Detail</a></li>
                                     <li><a href="Cart.jsp">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="checkout.jsp">Checkout</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="category">Danh mục<br> sản phẩm</a></li>

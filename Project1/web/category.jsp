@@ -45,7 +45,7 @@
 
     <body>
         <!-- Start Main Top -->
-       <div class="main-top">
+        <div class="main-top">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -74,7 +74,7 @@
                 </div>
             </div>
         </div>
-   
+
         <!-- Start Main Top -->
         <header class="main-header">
             <!-- Start Navigation -->
@@ -90,23 +90,22 @@
                     <!-- End Header Navigation -->
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
-                   <div class="collapse navbar-collapse" id="navbar-menu">
-                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="first">Trang Chủ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.jsp">The Flower<br> Shop</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Cửa Hàng</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="shop.jsp">Sidebar Shop</a></li>
-                                <li><a href="detail">Shop Detail</a></li>
-                                <li><a href="Cart.jsp">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="category">Danh mục<br> sản phẩm</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.jsp">Liên Hệ</a></li>
-                    </ul>
-                </div>
+                    <div class="collapse navbar-collapse" id="navbar-menu">
+                        <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class="nav-item active"><a class="nav-link" href="first">Trang Chủ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.jsp">The Flower<br> Shop</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Cửa Hàng</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="detail">Shop Detail</a></li>
+                                    <li><a href="Cart.jsp">Cart</a></li>
+                                    <li><a href="checkout.jsp">Checkout</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="category">Danh mục<br> sản phẩm</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.jsp">Liên Hệ</a></li>
+                        </ul>
+                    </div>
                     <!-- /.navbar-collapse -->
 
                     <!-- Start Atribute Navigation -->
@@ -117,18 +116,18 @@
                                     <div class="col-lg-9">
                                         <div class="input-group rounded">
                                             <form action="search" method="post">
-                                                <input name="txt" type="text"/>
+                                                <input name="txt" type="text" value="${note}"/>
                                                 <button type="submit" >
                                                     <li class="search"><i class="fa fa-search"></i></li>
                                                 </button>
                                             </form>
                                         </div>
                                     </div>
-
+                                    <c:set var="size" value="${sessionScope.size}"/>
                                     <div class="col-lg-3 ">
-                                        <li class="side-menu"><a href="#">
+                                        <li class="side-menu"><a href="Cart.jsp">
                                                 <i class="fa fa-shopping-bag"></i>
-                                                <span class="badge">3</span>
+                                                <span class="badge">${size}</span>
                                                 <p>Giỏ Hàng</p>
                                             </a></li>
                                     </div>
@@ -136,29 +135,10 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- End Atribute Navigation -->
                 </div>
-                <!-- Start Side Menu -->
-                
-                <!-- End Side Menu -->
             </nav>
-            <!-- End Navigation -->
         </header>
-        <!-- End Main Top -->
 
-        <!-- Start Top Search -->
-        <div class="top-search">
-            <div class="container">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                    <input type="text" class="form-control" placeholder="Search">
-                    <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-                </div>
-            </div>
-        </div>
-        <!-- End Top Search -->
-
-        <!-- Start All Title Box -->
         <div class="all-title-box">
             <div class="container">
                 <div class="row">
@@ -192,7 +172,6 @@
                                 <button data-filter=".bulbs">Hoa Chúc Mừng</button>
                                 <button data-filter=".fruits">Hoa Tình Yêu</button>
                                 <button data-filter=".podded-vegetables">Hoa Chia Buồn</button>
-                                <!--                                <button data-filter=".root-and-tuberous">Root and tuberous</button>-->
                             </div>
                         </div>
                     </div>
@@ -210,8 +189,6 @@
                                     <div class="mask-icon">
                                         <ul>
                                             <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-<!--                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->
                                         </ul>
                                         <a class="cart" href="cart?idsp=${p.masp}">Thêm Vào Giỏ Hàng</a>
                                     </div>
@@ -228,8 +205,7 @@
                                     <div class="mask-icon">
                                         <ul>
                                             <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-<!--                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>-->
-<!--                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->
+
                                         </ul> 
                                         <a class="cart" href="cart?idsp=${p.masp}">Thêm Vào Giỏ Hàng</a>
                                     </div>
@@ -247,8 +223,6 @@
                                     <div class="mask-icon">
                                         <ul>
                                             <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-<!--                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>-->
-<!--                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->
                                         </ul>
                                         <a class="cart" href="cart?idsp=${p.masp}">Thêm Vào Giỏ Hàng</a>
                                     </div>
@@ -347,9 +321,6 @@
             </div>
         </div>
         <!-- End Instagram Feed  -->
-
-
-        <!-- Start Footer  -->
         <footer>
             <div class="footer-main">
                 <div class="container">
@@ -431,12 +402,6 @@
             </div>
         </footer>
 
-        <!-- Start copyright  -->
-        <!--    <div class="footer-copyright">
-                <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By :
-                    <a href="https://html.design/">html design</a></p>
-            </div>-->
-        <!-- End copyright  -->
 
         <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 

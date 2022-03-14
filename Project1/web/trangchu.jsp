@@ -102,7 +102,6 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Cửa Hàng</a>
                             <ul class="dropdown-menu">
-                                <li><a href="shop.jsp">Sidebar Shop</a></li>
                                 <li><a href="detail">Shop Detail</a></li>
                                 <li><a href="Cart.jsp">Cart</a></li>
                                 <li><a href="checkout.html">Checkout</a></li>
@@ -129,7 +128,7 @@
                                         </form>
                                     </div>
                                 </div>
-                           <c:set var="size" value="${sessionScope.size}"/>
+                            <c:set var="size" value="${sessionScope.size}"/>
                                 <div class="col-lg-3 ">
                                     <li class="side-menu"><a href="Cart.jsp">
                                             <i class="fa fa-shopping-bag"></i>

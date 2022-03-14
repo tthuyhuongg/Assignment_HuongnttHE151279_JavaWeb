@@ -50,59 +50,27 @@
         <div class="main-top">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="custom-select-box">
-                            <select id="basic" class="selectpicker show-tick form-control" data-placeholder="VND">
-                                <option> VND </option>
-                            </select>
-                        </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="right-phone-box">
                             <p>Phone :- <a href="#"> +84 98879888</a></p>
                         </div>
                         <div class="our-link">
                             <ul>
-                                <li><a href="#"><i class="fa fa-user s_color"></i> Tài Khoản</a></li>
-                                <li><a href="#"><i class="fas fa-location-arrow"></i> Địa Chỉ Cửa Hàng</a></li>
-                                <li><a href="#"><i class="fas fa-headset"></i> Liên Hệ</a></li>
+                                <li><a href="contact.jsp"><i class="fas fa-headset"></i> Liên Hệ</a></li>
+                                    <c:if test="${sessionScope.account != null}">
+                                    <li><a href="#">${sessionScope.account.user}</a></li>
+                                    <li><a href="logout"><i class="fas fa-headset"></i> Đăng Xuất</a></li>
+                                    </c:if>
+                                    <c:if test="${sessionScope.account == null}">
+                                    <li><a href="Login.jsp"><i class="fas fa-headset"></i> Đăng Nhập</a></li>
+                                    </c:if>
+                                    <c:if test="${sessionScope.account.isAdmin == 1}">
+                                    <li><a href="#"><i class="fa fa-user s_color"></i>Người Dùng</a></li>
+                                    </c:if>
+                                    <c:if test="${sessionScope.account.isAdmin == 0}">
+                                    <li><a href="manager"><i class="fa fa-user s_color"></i>Người Quản Lý</a></li>
+                                    </c:if>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="login-box">
-                            <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                                <option>Đăng Ký</option>
-                                <option>Đăng Nhập</option>
-                            </select>
-                        </div>
-                        <div class="text-slid-box">
-                            <div id="offer-box" class="carouselTicker">
-                                <!--                                <ul class="offer-box">
-                                                                    <li>
-                                                                        <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT80
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="fab fa-opencart"></i> Off 50%! Shop Now
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="fab fa-opencart"></i> Off 50%! Shop Now 
-                                                                    </li>
-                                                                </ul>-->
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -132,10 +100,9 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Cửa Hàng</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="shop.jsp">Sidebar Shop</a></li>
                                     <li><a href="detail">Chi tiết Sản Phẩm</a></li>
                                     <li><a href="Cart.jsp">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="checkout.jsp">Checkout</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="category">Danh mục sản phẩm</a></li>
@@ -146,61 +113,34 @@
 
                     <!-- Start Atribute Navigation -->
                     <div class="attr-nav">
-                        <div class="container">
-                            <ul>
-                                <div class="row">
-                                    <div class="col-lg-9">
-                                        <div class="input-group rounded">
-                                            <form action="search" method="post">
-                                                <input name="txt" type="text"/>
-                                                <button type="submit" >
-                                                    <li class="search"><i class="fa fa-search"></i></li>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 ">
-                                        <li class="side-menu"><a href="#">
-                                                <i class="fa fa-shopping-bag"></i>
-                                                <span class="badge">3</span>
-                                                <p>Giỏ Hàng</p>
-                                            </a></li>
+                    <div class="container">
+                        <ul>
+                            <div class="row">
+                                <div class="col-lg-9">
+                                    <div class="input-group rounded">
+                                        <form action="search" method="post">
+                                            <input name="txt" type="text" value="${note}"/>
+                                            <button type="submit" >
+                                                <li class="search"><i class="fa fa-search"></i></li>
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
-                            </ul>
-                        </div>
+                            <c:set var="size" value="${sessionScope.size}"/>
+                                <div class="col-lg-3 ">
+                                    <li class="side-menu"><a href="Cart.jsp">
+                                            <i class="fa fa-shopping-bag"></i>
+                                            <span class="badge">${size}</span>
+                                            <p>Giỏ Hàng</p>
+                                        </a></li>
+                                </div>
+                            </div>
+                        </ul>
                     </div>
+                </div>
                     <!-- End Atribute Navigation -->
                 </div>
-                <!-- Start Side Menu -->
-                <div class="side">
-                    <a href="#" class="close-side"><i class="fa fa-times"></i></a>
-                    <li class="cart-box">
-                        <ul class="cart-list">
-                            <li>
-                                <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Delica omtantur </a></h6>
-                                <p>1x - <span class="price">$80.00</span></p>
-                            </li>
-                            <li>
-                                <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Omnes ocurreret</a></h6>
-                                <p>1x - <span class="price">$60.00</span></p>
-                            </li>
-                            <li>
-                                <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Agam facilisis</a></h6>
-                                <p>1x - <span class="price">$40.00</span></p>
-                            </li>
-                            <li class="total">
-                                <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                                <span class="float-right"><strong>Total</strong>: $180.00</span>
-                            </li>
-                        </ul>
-                    </li>
-                </div>
-                <!-- End Side Menu -->
+
             </nav>
             <!-- End Navigation -->
         </header>
@@ -279,23 +219,9 @@
 
                             <div class="price-box-bar">
                                 <div class="cart-and-bay-btn">
-                                    <a class="btn hvr-hover" data-fancybox-close="" href="buy?idsp=${p.masp}">Mua</a>
+                                    <a class="btn hvr-hover" data-fancybox-close="" href="cart?idsp=${p.masp}">Mua</a>
                                     <a class="btn hvr-hover" data-fancybox-close="" href="cart?idsp=${p.masp}">Thêm Vào Giỏ Hàng</a>
                                 </div>
-                            </div>
-
-                            <div class="add-to-btn">
-                                <div class="add-comp">
-                                    <!--                                    <a class="btn hvr-hover" href="#"><i class="fas fa-heart"></i> Add to wishlist</a>-->
-                                    <!--                                    <a class="btn hvr-hover" href="#"><i class="fas fa-sync-alt"></i> Add to Compare</a>-->
-                                </div>
-                                <!--                                <div class="share-bar">
-                                                                    <a class="btn hvr-hover" href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-                                                                    <a class="btn hvr-hover" href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
-                                                                    <a class="btn hvr-hover" href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                                                                    <a class="btn hvr-hover" href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
-                                                                    <a class="btn hvr-hover" href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                                                                </div>-->
                             </div>
                         </div>
                     </div>

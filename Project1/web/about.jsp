@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,31 +48,27 @@
         <div class="main-top">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="custom-select-box">
-                            <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-                                <option> VND </option>
-                            </select>
-                        </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="right-phone-box">
                             <p>Phone :- <a href="#"> +84 98879888</a></p>
                         </div>
                         <div class="our-link">
                             <ul>
                                 <li><a href="contact.jsp"><i class="fas fa-headset"></i> Liên Hệ</a></li>
+                                    <c:if test="${sessionScope.account != null}">
+                                    <li><a href="#">${sessionScope.account.user}</a></li>
+                                    <li><a href="logout"><i class="fas fa-headset"></i> Đăng Xuất</a></li>
+                                    </c:if>
+                                    <c:if test="${sessionScope.account == null}">
+                                    <li><a href="Login.jsp"><i class="fas fa-headset"></i> Đăng Nhập</a></li>
+                                    </c:if>
+                                    <c:if test="${sessionScope.account.isAdmin == 1}">
+                                    <li><a href="#"><i class="fa fa-user s_color"></i>Người Dùng</a></li>
+                                    </c:if>
+                                    <c:if test="${sessionScope.account.isAdmin == 0}">
+                                    <li><a href="manager"><i class="fa fa-user s_color"></i>Người Quản Lý</a></li>
+                                    </c:if>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="login-box">
-                            <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                                <option>Đăng Ký</option>
-                                <option>Đăng Nhập</option>
-                            </select>
-                        </div>
-                        <div class="text-slid-box">
-                            <div id="offer-box" class="carouselTicker">
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -101,10 +98,9 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Cửa Hàng</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="shop.jsp">Sidebar Shop</a></li>
                                     <li><a href="detail">Shop Detail</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="Cart.jsp">Cart</a></li>
+                                    <li><a href="checkout.jsp">Checkout</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="category">Danh mục<br> sản phẩm</a></li>
@@ -129,10 +125,11 @@
                                         </div>
                                     </div>
 
+                                    <c:set var="size" value="${sessionScope.size}"/>
                                     <div class="col-lg-3 ">
-                                        <li class="side-menu"><a href="#">
+                                        <li class="side-menu"><a href="Cart.jsp">
                                                 <i class="fa fa-shopping-bag"></i>
-                                                <span class="badge">3</span>
+                                                <span class="badge">${size}</span>
                                                 <p>Giỏ Hàng</p>
                                             </a></li>
                                     </div>
@@ -218,7 +215,7 @@
                             The Flower Shop đã giúp khách hàng gửi tặng 
                             những bó hoa tươi đẹp và đầy ý nghĩa đến những người thân yêu trong tất 
                             cả những dịp đặc biệt trong năm.
-                             The Flower Shop cung cấp dịch vụ điện hoa và đặt hoa online 24/7 
+                            The Flower Shop cung cấp dịch vụ điện hoa và đặt hoa online 24/7 
                             giao tận nơi tại  Hà Nội và trên tất cả các tỉnh – thành phố tại Việt Nam.
                             Với hệ thống cửa hàng hoa tươi liên kết trên khắp tất cả các tỉnh – thành phố trên toàn quốc, 
                             The Flower Shop có thể giúp bạn gửi tặng hoa tươi cho người thân 
@@ -236,7 +233,7 @@
         </div>
 
         <!-- Start Instagram Feed  -->
- <div class="instagram-box">
+        <div class="instagram-box">
             <div class="main-instagram owl-carousel owl-theme">
                 <div class="item">
                     <div class="ins-inner-box">
