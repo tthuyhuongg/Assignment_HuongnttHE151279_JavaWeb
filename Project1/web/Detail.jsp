@@ -266,14 +266,14 @@
                         <div class="single-product-details">
                             <h2>${detailsp.namesp}</h2>
                             <h5>${detailsp.price} </h5>
-                            <p class="available-stock"><span> More than 20 available / <a href="#">8 sold </a></span><p>
+                            <p class="available-stock"><span> <a href="#"> </a></span><p>
                             <h4>${detailsp.description}</h4>
 
                             <ul>
                                 <li>
                                     <div class="form-group quantity-box">
                                         <label class="control-label">Số Lượng</label>
-                                        <input class="form-control" value="0" min="0" max="20" type="number">
+                                        <input class="form-control" value="${detailsp.quantity}" min="0" max="20" type="number">
                                     </div>
                                 </li>
                             </ul>
