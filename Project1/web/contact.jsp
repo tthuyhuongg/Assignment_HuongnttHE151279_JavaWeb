@@ -63,44 +63,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="login-box">
-                            <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                                <option>Đăng Ký</option>
-                                <option>Đăng Nhập</option>
-                            </select>
-                        </div>
-                        <div class="text-slid-box">
-                            <div id="offer-box" class="carouselTicker">
-                                <!--                            <ul class="offer-box">
-                                                                <li>
-                                                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT80
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now 
-                                                                </li>
-                                                            </ul>-->
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -130,7 +93,7 @@
                                 <li><a href="shop.jsp">Sidebar Shop</a></li>
                                 <li><a href="detail">Shop Detail</a></li>
                                 <li><a href="Cart.jsp">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
+                                <li><a href="checkout.jsp">Checkout</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="category">Danh mục<br> sản phẩm</a></li>
@@ -139,8 +102,7 @@
                 </div>
                     <!-- /.navbar-collapse -->
 
-                    <!-- Start Atribute Navigation -->
-                         <div class="attr-nav">
+                   <div class="attr-nav">
                     <div class="container">
                         <ul>
                             <div class="row">
@@ -154,11 +116,11 @@
                                         </form>
                                     </div>
                                 </div>
-
+                            <c:set var="size" value="${sessionScope.size}"/>
                                 <div class="col-lg-3 ">
                                     <li class="side-menu"><a href="Cart.jsp">
                                             <i class="fa fa-shopping-bag"></i>
-                                            <span class="badge">3</span>
+                                            <span class="badge">${size}</span>
                                             <p>Giỏ Hàng</p>
                                         </a></li>
                                 </div>
