@@ -46,38 +46,6 @@
 
     <body>
         <!-- Start Main Top -->
-        <div class="main-top">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="right-phone-box">
-                            <p>Phone :- <a href="#"> +84 98879888</a></p>
-                        </div>
-                        <div class="our-link">
-                            <ul>
-                                <li><a href="contact.jsp"><i class="fas fa-headset"></i> Liên Hệ</a></li>
-                                    <c:if test="${sessionScope.account != null}">
-                                    <li><a href="#">${sessionScope.account.user}</a></li>
-                                    <li><a href="logout"><i class="fas fa-headset"></i> Đăng Xuất</a></li>
-                                    </c:if>
-                                    <c:if test="${sessionScope.account == null}">
-                                    <li><a href="Login.jsp"><i class="fas fa-headset"></i> Đăng Nhập</a></li>
-                                    </c:if>
-                                    <c:if test="${sessionScope.account.isAdmin == 1}">
-                                    <li><a href="#"><i class="fa fa-user s_color"></i>Người Dùng</a></li>
-                                    </c:if>
-                                    <c:if test="${sessionScope.account.isAdmin == 0}">
-                                    <li><a href="manager"><i class="fa fa-user s_color"></i>Người Quản Lý</a></li>
-                                    </c:if>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Main Top -->
-
-        <!-- Start Main Top -->
         <header class="main-header">
             <!-- Start Navigation -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
@@ -126,7 +94,7 @@
                                     <div class="table-main table-responsive">
                                         <h1>Thêm Sản Phẩm</h1>
                                         <form action="add" method="post">
-                                            <table border="1">
+                                            <table border="1"style="width: 300px;text-align: center">
                                                 <tbody>
                                                     <tr>
                                                         <th>Mã Sản Phẩm</th>
