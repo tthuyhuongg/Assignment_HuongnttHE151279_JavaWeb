@@ -40,38 +40,6 @@
 
     <body>
         <!-- Start Main Top -->
-        <div class="main-top">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="right-phone-box">
-                            <p>Phone :- <a href="#"> +84 98879888</a></p>
-                        </div>
-                        <div class="our-link">
-                            <ul>
-                                <li><a href="contact.jsp"><i class="fas fa-headset"></i> Liên Hệ</a></li>
-                                    <c:if test="${sessionScope.account != null}">
-                                    <li><a href="#">${sessionScope.account.user}</a></li>
-                                    <li><a href="logout"><i class="fas fa-headset"></i> Đăng Xuất</a></li>
-                                    </c:if>
-                                    <c:if test="${sessionScope.account == null}">
-                                    <li><a href="Login.jsp"><i class="fas fa-headset"></i> Đăng Nhập</a></li>
-                                    </c:if>
-                                    <c:if test="${sessionScope.account.isAdmin == 1}">
-                                    <li><a href="#"><i class="fa fa-user s_color"></i>Người Dùng</a></li>
-                                    </c:if>
-                                    <c:if test="${sessionScope.account.isAdmin == 0}">
-                                    <li><a href="manager"><i class="fa fa-user s_color"></i>Người Quản Lý</a></li>
-                                    </c:if>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Main Top -->
-
-        <!-- Start Main Top -->
         <header class="main-header">
             <!-- Start Navigation -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
@@ -83,9 +51,7 @@
                         </button>
                         <a class="navbar-brand" href="index.html"><img src="https://asset.bloomnation.com/c_fit,f_auto,h_203,q_auto,w_695/v1/vendor/5341/profile/t/h/theflowershopnj-logo.png"width="200px" class="logo" alt=""></a>
                     </div>
-                    <!-- End Header Navigation -->
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                             <li class="nav-item active"><a class="nav-link" href="first">Trang Chủ</a></li>
@@ -103,65 +69,10 @@
                             <li class="nav-item"><a class="nav-link" href="contact.jsp">Liên Hệ</a></li>
                         </ul>
                     </div>
-                    <!-- /.navbar-collapse -->
-
-                    <!-- Start Atribute Navigation -->
-                    <div class="attr-nav">
-                        <ul>
-                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                            <li class="side-menu"><a href="#">
-                                    <i class="fa fa-shopping-bag"></i>
-                                    <span class="badge">3</span>
-                                    <p>My Cart</p>
-                                </a></li>
-                        </ul>
-                    </div>
-                    <!-- End Atribute Navigation -->
                 </div>
-                <!-- Start Side Menu -->
-                <div class="side">
-                    <a href="#" class="close-side"><i class="fa fa-times"></i></a>
-                    <li class="cart-box">
-                        <ul class="cart-list">
-                            <li>
-                                <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Delica omtantur </a></h6>
-                                <p>1x - <span class="price">$80.00</span></p>
-                            </li>
-                            <li>
-                                <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Omnes ocurreret</a></h6>
-                                <p>1x - <span class="price">$60.00</span></p>
-                            </li>
-                            <li>
-                                <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Agam facilisis</a></h6>
-                                <p>1x - <span class="price">$40.00</span></p>
-                            </li>
-                            <li class="total">
-                                <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                                <span class="float-right"><strong>Total</strong>: $180.00</span>
-                            </li>
-                        </ul>
-                    </li>
-                </div>
-                <!-- End Side Menu -->
             </nav>
-            <!-- End Navigation -->
         </header>
-        <!-- End Main Top -->
-
-        <!-- Start Top Search -->
-        <div class="top-search">
-            <div class="container">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                    <input type="text" class="form-control" placeholder="Search">
-                    <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-                </div>
-            </div>
-        </div>
-
+ 
         <!-- Start Cart  -->
         <div class="cart-box-main">
             <div class="container">
@@ -171,11 +82,11 @@
                             <form action="edit" method="post">
                                 <body>
                                     <h1>Edit Sản Phẩm </h1>
-                                    <table >
+                                    <table border="1" style="width: 300px;text-align: center">
                                         <tbody>
                                             <tr>
                                             <tr>
-                                                <td>Mã Sản Phẩm</dt>
+                                                <td>Mã Sản Phẩm</td>
                                                 <td><input type ="text" name ="id" value="${listedit.masp}"readonly="true"</td>
                                             </tr>
                                             <tr>
@@ -216,6 +127,7 @@
                                             </tr>
 
                                             <tr>
+                                                <td>Danh Mục Sản Phẩm</td>
                                                 <td>
                                                     <select name="categorycaid">
                                                         <c:forEach items="${listC}" var="C">
@@ -240,14 +152,10 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
         <!-- End Cart -->
 
-
-        <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
         <!-- ALL JS FILES -->
         <script src="js/jquery-3.2.1.min.js"></script>

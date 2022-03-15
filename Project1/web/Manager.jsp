@@ -111,73 +111,10 @@
                         <li class="nav-item"><a class="nav-link" href="contact.jsp">Liên Hệ</a></li>
                     </ul>
                 </div>
-                <!-- /.navbar-collapse -->
-
-                <!-- Start Atribute Navigation -->
-                <div class="attr-nav">
-                    <div class="container">
-                        <ul>
-                            <div class="row">
-                                <div class="col-lg-9">
-                                    <div class="input-group rounded">
-                                        <form action="search" method="post">
-                                            <input name="txt" type="text" value="${note}"/>
-                                            <button type="submit" >
-                                                <li class="search"><i class="fa fa-search"></i></li>
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 ">
-                                    <li class="side-menu"><a href="Cart.jsp">
-                                            <i class="fa fa-shopping-bag"></i>
-                                            <span class="badge"></span>
-                                            <p>Giỏ Hàng</p>
-                                        </a></li>
-                                </div>
-                            </div>
-                        </ul>
-                    </div>
-                </div>
-                <!-- End Atribute Navigation -->
             </div>
-            <!-- Start Side Menu -->
-
-            <!-- End Side Menu -->
         </nav>
         <!-- End Navigation -->
     </header>
-    <!-- End Main Top -->
-
-    <!-- Start Top Search -->
-    <div class="top-search">
-        <div class="container">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" class="form-control" placeholder="Search">
-                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-            </div>
-        </div>
-    </div>
-    <!-- End Top Search -->
-
-    <!-- Start All Title Box -->
-    <div class="all-title-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Manager</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                        <li class="breadcrumb-item active">Manager</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End All Title Box -->
-
     <!-- Start Cart  -->
     <div class="cart-box-main">
         <div class="container">
@@ -186,7 +123,8 @@
                     <h1><b>The Flower Shop Manage Product</b></h1><br>
                     <div class="table-main table-responsive">
                         <form name ="m" action="" method="post">
-                            <button><a href="add?msp=${p.masp}">Thêm Sản Phẩm</a></button>	
+                            <button><a href="addca?msp=${p.masp}">Thêm Danh Mục Sản Phẩm</a></button>
+                            <button><a href="add?msp=${p.masp}">Thêm Sản Phẩm</a></button>
                             <table class=" table-hover">
                                 <thead>
                                     <tr>
@@ -239,7 +177,6 @@
         </div>
     </div>
     <!-- End Cart -->
-    <a href="#"><button type="button" class="btn btn-primary">Back to home</button>
         <!-- Start Instagram Feed  -->
         <div class="instagram-box">
             <div class="main-instagram owl-carousel owl-theme">
@@ -419,17 +356,6 @@
 
         <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
-        <!-- ALL JS FILES -->
-<!--        <script type="text/javascript">
-            function edit(id) {
-                document.m.action = "edit?msp=" + id;
-                document.m.submit();
-            }
-            function deletemanager(id) {
-                document.m.action = "deletemanager?msp=" + id;
-                document.m.submit();
-            }
-        </script>-->
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
