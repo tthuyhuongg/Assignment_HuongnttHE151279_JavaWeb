@@ -10,29 +10,18 @@ package entity;
  * @author thuy huong
  */
 public class Account {
-    private int id;
     private String user;
     private String pass;
     private int isAdmin;
-    private int isUser;
+
 
     public Account() {
     }
 
-    public Account(int id, String user, String pass, int isAdmin, int isUser) {
-        this.id = id;
+    public Account(String user, String pass, int isAdmin) {
         this.user = user;
         this.pass = pass;
         this.isAdmin = isAdmin;
-        this.isUser = isUser;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getUser() {
@@ -59,18 +48,12 @@ public class Account {
         this.isAdmin = isAdmin;
     }
 
-    public int getIsUser() {
-        return isUser;
-    }
-
-    public void setIsUser(int isUser) {
-        this.isUser = isUser;
-    }
-
     @Override
     public String toString() {
-        return "Account{" + "id=" + id + ", user=" + user + ", pass=" + pass + ", isAdmin=" + isAdmin + ", isUser=" + isUser + '}';
+        return "Account{" + "user=" + user + ", pass=" + pass + ", isAdmin=" + isAdmin + '}';
     }
+
+
     
     
 }
