@@ -146,11 +146,10 @@ public class ProductDAO extends BaseDAO<Product> {
             ps.setString(2, pass);
             rs = ps.executeQuery();
             while (rs.next()) {
-                return new Account(rs.getInt(1),
+                return new Account(
+                        rs.getString(1),
                         rs.getString(2),
-                        rs.getString(3),
-                        rs.getInt(4),
-                        rs.getInt(5));
+                        rs.getInt(3));
             }
         } catch (Exception e) {
         }
@@ -165,11 +164,10 @@ public class ProductDAO extends BaseDAO<Product> {
             ps.setString(1, name);
             rs = ps.executeQuery();
             while (rs.next()) {
-                return new Account(rs.getInt(1),
+                return new Account(
+                        rs.getString(1),
                         rs.getString(2),
-                        rs.getString(3),
-                        rs.getInt(4),
-                        rs.getInt(5));
+                        rs.getInt(3));
             }
         } catch (Exception e) {
         }
@@ -177,14 +175,28 @@ public class ProductDAO extends BaseDAO<Product> {
     }
 
     public void signup(String name, String pass) {
-        String sql = "insert into Acount values(?,?,1,0)";
+        String sql = "insert into Acount values(?,?,0)";
         try {
             ps = connection.prepareStatement(sql);
             ps.setString(1, name);
             ps.setString(2, pass);
+            //   ps.setInt(3,isAdmin);
             ps.executeUpdate();
         } catch (Exception e) {
         }
+    }
+
+    public void addcategory(String name, String image) {
+        String sql = "insert into Categories(Cname,Picture) values\n"
+                + "(?,?)";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, name);
+            ps.setString(2, image);
+             ps.executeUpdate();
+        } catch (Exception e) {
+        }
+
     }
 
     public void delete(String msp) {
@@ -230,20 +242,20 @@ public class ProductDAO extends BaseDAO<Product> {
 
     }
 
-    public void addproduct(String masp, String name, String image, double price, String title, String des, String date, int pkm, double pricekm, int quan,int id) {
+    public void addproduct(String masp, String name, String image, double price, String title, String des, String date, int pkm, double pricekm, int quan, int id) {
         String sql = "insert into Product(masp,Name,Picture,price,title,[Description],dateup,Pkm,pricekm,quantity,Id) values\n"
                 + "(?,?,?,?,?,?,?,?,?,?,?)";
         try {
             ps = connection.prepareStatement(sql);
-            ps.setString(1,masp);
-            ps.setString(2,name);
-            ps.setString(3,image);
-            ps.setDouble(4,price);
-            ps.setString(5,title);
-            ps.setString(6,des);
-            ps.setString(7,date);
-            ps.setInt(8,pkm);
-            ps.setDouble(9,pricekm);
+            ps.setString(1, masp);
+            ps.setString(2, name);
+            ps.setString(3, image);
+            ps.setDouble(4, price);
+            ps.setString(5, title);
+            ps.setString(6, des);
+            ps.setString(7, date);
+            ps.setInt(8, pkm);
+            ps.setDouble(9, pricekm);
             ps.setInt(10, quan);
             ps.setInt(11, id);
             ps.executeUpdate();
