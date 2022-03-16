@@ -50,7 +50,7 @@ public class editServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        String masp = request.getParameter("msp");
+        int masp = Integer.parseInt(request.getParameter("msp"));
         ProductDAO d = new ProductDAO();
         Product p = d.getsp(masp);
         ArrayList<Categories> c = d.getAllCa();

@@ -50,13 +50,26 @@ public class login extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         Cookie arr[] = request.getCookies();
+        String user = null;
+        String pass = null;
         if (arr != null) {
             for (Cookie c : arr) {
                 if (c.getName().equals("userC")) {
-                    request.setAttribute("usern", c.getValue());
+                    user = c.getValue();
                 }
                 if (c.getName().equals("passC")) {
-                    request.setAttribute("passw", c.getValue());
+                    pass = c.getValue();
+                }
+                if(user!= null && pass != null){
+                    break;
+                }
+            }
+            if(user != null && pass != null){
+                Account acc = new ProductDAO().login(user, pass);
+                if(acc!= null){
+                    request.getSession().setAttribute("account", acc);
+                    response.sendRedirect("first");
+                    return;
                 }
             }
             request.getRequestDispatcher("Login.jsp").forward(request, response);

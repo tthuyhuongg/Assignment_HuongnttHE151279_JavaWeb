@@ -43,7 +43,7 @@ public class carttServlet extends HttpServlet {
         } else {
             cart = new Cart();
         }
-        String masp = request.getParameter("idsp");
+        int masp = Integer.parseInt(request.getParameter("idsp"));
         int quantity =1;
         try {
             ProductDAO d = new ProductDAO();

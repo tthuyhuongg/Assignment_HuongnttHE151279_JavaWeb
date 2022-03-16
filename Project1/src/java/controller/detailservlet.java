@@ -34,7 +34,7 @@ public class detailservlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String masp = request.getParameter("masp");
+            int masp = Integer.parseInt(request.getParameter("masp"));
             ProductDAO pd = new ProductDAO();
             Product d = pd.getsp(masp);
             request.setAttribute("detailsp", d);

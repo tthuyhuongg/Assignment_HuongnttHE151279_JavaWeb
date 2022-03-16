@@ -42,7 +42,7 @@ public class deleteServlet extends HttpServlet {
         }else{
             cart = new Cart();
         }
-        String masp = request.getParameter("msp");
+        int masp = Integer.parseInt(request.getParameter("msp"));
         cart.remove(masp);
         ArrayList<Item> list =cart.getList();
         se.setAttribute("cart", cart);
