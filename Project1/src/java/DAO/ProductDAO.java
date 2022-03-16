@@ -8,7 +8,6 @@ package DAO;
 import entity.Account;
 import entity.Cart;
 import entity.Categories;
-import entity.Customer;
 import entity.Item;
 import entity.Product;
 import java.sql.PreparedStatement;
@@ -35,7 +34,7 @@ public class ProductDAO extends BaseDAO<Product> {
             rs = ps.executeQuery();
             while (rs.next()) {
                 Product p = new Product();
-                p.setMasp(rs.getString("masp"));
+                p.setMasp(rs.getInt("masp"));
                 p.setNamesp(rs.getString("Name"));
                 p.setImage(rs.getString("Picture"));
                 p.setPrice(rs.getFloat("price"));
@@ -77,7 +76,7 @@ public class ProductDAO extends BaseDAO<Product> {
             rs = ps.executeQuery();
             while (rs.next()) {
                 Product p = new Product();
-                p.setMasp(rs.getString("masp"));
+                p.setMasp(rs.getInt("masp"));
                 p.setNamesp(rs.getString("Name"));
                 p.setImage(rs.getString("Picture"));
                 p.setPrice(rs.getFloat("price"));
@@ -90,22 +89,21 @@ public class ProductDAO extends BaseDAO<Product> {
         return list;
     }
 
-    public Product getsp(String msp) {
+    public Product getsp(int msp) {
         String sql = "select * from Product where masp=?";
         try {
             ps = connection.prepareStatement(sql);
-            ps.setString(1, msp);
+            ps.setInt(1, msp);
             rs = ps.executeQuery();
             while (rs.next()) {
-                return new Product(rs.getString("masp"),
+                return new Product(
+                        rs.getInt("masp"),
                         rs.getString("Name"),
                         rs.getString("Picture"),
                         rs.getFloat("price"),
                         rs.getString("title"),
                         rs.getString("Description"),
                         rs.getString("dateup"),
-                        rs.getInt("Pkm"),
-                        rs.getDouble("pricekm"),
                         rs.getInt("quantity"),
                         rs.getInt("Id"));
             }
@@ -123,7 +121,7 @@ public class ProductDAO extends BaseDAO<Product> {
             rs = ps.executeQuery();
             while (rs.next()) {
                 Product p = new Product();
-                p.setMasp(rs.getString("masp"));
+                p.setMasp(rs.getInt("masp"));
                 p.setNamesp(rs.getString("Name"));
                 p.setImage(rs.getString("Picture"));
                 p.setPrice(rs.getFloat("price"));
@@ -145,9 +143,14 @@ public class ProductDAO extends BaseDAO<Product> {
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new Account(
-                        rs.getString(1),
+                        rs.getInt(1),
                         rs.getString(2),
-                        rs.getInt(3));
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8));
             }
         } catch (Exception e) {
         }
@@ -163,9 +166,14 @@ public class ProductDAO extends BaseDAO<Product> {
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new Account(
-                        rs.getString(1),
+                        rs.getInt(1),
                         rs.getString(2),
-                        rs.getInt(3));
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8));
             }
         } catch (Exception e) {
         }
@@ -284,7 +292,7 @@ public class ProductDAO extends BaseDAO<Product> {
             rs = ps.executeQuery();
             while (rs.next()) {
                 Product p = new Product();
-                p.setMasp(rs.getString("masp"));
+                p.setMasp(rs.getInt("masp"));
                 p.setNamesp(rs.getString("Name"));
                 p.setImage(rs.getString("Picture"));
                 p.setPrice(rs.getFloat("price"));
@@ -305,7 +313,7 @@ public class ProductDAO extends BaseDAO<Product> {
             rs = ps.executeQuery();
             while (rs.next()) {
                 Product p = new Product();
-                p.setMasp(rs.getString("masp"));
+                p.setMasp(rs.getInt("masp"));
                 p.setNamesp(rs.getString("Name"));
                 p.setImage(rs.getString("Picture"));
                 p.setPrice(rs.getFloat("price"));
@@ -327,7 +335,7 @@ public class ProductDAO extends BaseDAO<Product> {
             rs = ps.executeQuery();
             while (rs.next()) {
                 Product p = new Product();
-                p.setMasp(rs.getString("masp"));
+                p.setMasp(rs.getInt("masp"));
                 p.setNamesp(rs.getString("Name"));
                 p.setImage(rs.getString("Picture"));
                 p.setPrice(rs.getFloat("price"));
@@ -338,40 +346,6 @@ public class ProductDAO extends BaseDAO<Product> {
         } catch (SQLException e) {
         }
         return list;
-    }
-
-    public void addoder(Customer cus, Cart cart) throws SQLException {
-        LocalDate date = java.time.LocalDate.now();
-        String datet = date.toString();
-        String sql = "insert into Oder(cusid,orderdate,totalmoney) values(?,?,?)";
-        try {
-            ps = connection.prepareStatement(sql);
-            ps.setString(1, datet);
-            ps.setInt(2, cus.getId());
-            ps.setDouble(3, cart.total());
-            ps.executeUpdate();
-        } catch (Exception e) {
-        }
-        String sql1 = "select top 1 oderid from Oder order by oderid desc ";
-        try {
-            PreparedStatement ps1 = connection.prepareStatement(sql1);
-            rs = ps1.executeQuery();
-            while (rs.next()) {
-                int oid = rs.getInt(1);
-                for (Item o : cart.getList()) {
-                    String sql2 = "insert into Oderdetail(masp,price,Quantity) values\n"
-                            + "(?,?,?,?)";
-                    PreparedStatement ps2 = connection.prepareStatement(sql2);
-                    ps2.setInt(1, oid);
-                    ps2.setString(2, o.getSp().getMasp());
-                    ps2.setDouble(3, o.getPrice());
-                    ps2.setInt(4, o.getQuantity());
-                    ps2.executeUpdate();
-                }
-            }
-        } catch (Exception e) {
-        }
-
     }
 
 }

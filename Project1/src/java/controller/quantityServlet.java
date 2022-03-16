@@ -45,8 +45,8 @@ public class quantityServlet extends HttpServlet {
         }
         try {
             int quantity = Integer.parseInt(request.getParameter("num"));
-            String masp = request.getParameter("msp");
-            if((quantity == -1) && (cart.quantity(masp)==1)){
+            int masp = Integer.parseInt(request.getParameter("msp"));
+            if((quantity==-1) && (cart.quantity(masp)==1)){
                 cart.remove(masp);
             }else{
                 ProductDAO d = new ProductDAO();

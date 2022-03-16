@@ -10,18 +10,36 @@ package entity;
  * @author thuy huong
  */
 public class Account {
+    private int id;
     private String user;
     private String pass;
-    private int isAdmin;
+    private String name;
+    private String address;
+    private String email;
+    private String phone;
+    private String role;
 
 
     public Account() {
     }
 
-    public Account(String user, String pass, int isAdmin) {
+    public Account(int id, String user, String pass, String name, String address, String email, String phone, String role) {
+        this.id = id;
         this.user = user;
         this.pass = pass;
-        this.isAdmin = isAdmin;
+        this.name = name;
+        this.address = address;
+        this.email = email;
+        this.phone = phone;
+        this.role = role;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUser() {
@@ -40,20 +58,49 @@ public class Account {
         this.pass = pass;
     }
 
-    public int getIsAdmin() {
-        return isAdmin;
+    public String getName() {
+        return name;
     }
 
-    public void setIsAdmin(int isAdmin) {
-        this.isAdmin = isAdmin;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override
     public String toString() {
-        return "Account{" + "user=" + user + ", pass=" + pass + ", isAdmin=" + isAdmin + '}';
+        return "Account{" + "id=" + id + ", user=" + user + ", pass=" + pass + ", name=" + name + ", address=" + address + ", email=" + email + ", phone=" + phone + ", role=" + role + '}';
     }
-
-
-    
-    
+  
 }
