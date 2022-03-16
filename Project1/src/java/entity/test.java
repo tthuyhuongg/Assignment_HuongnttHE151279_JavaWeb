@@ -15,10 +15,13 @@ import java.util.ArrayList;
 public class test {
     public static void main(String[] args) {
         ProductDAO p = new ProductDAO();
-        ArrayList<Product> a = p.getpage(2);
-        for (Product pr : a) {
-            System.out.println(pr);
-        }
+        Product d = p.getsp(9);
+        System.out.println(d);
+        
+//        ArrayList<Product> a = p.getpage(2);
+//        for (Product pr : a) {
+//            System.out.println(pr);
+//        }
 //        ArrayList<Categories> a = p.getAllCa();
 //        for (Categories pro : a) {
 //            System.out.println(pro);
