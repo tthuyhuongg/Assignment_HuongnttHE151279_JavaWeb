@@ -57,7 +57,7 @@ public class carttServlet extends HttpServlet {
         ArrayList<Item> list = cart.getList();
         session.setAttribute("cart", cart);
         session.setAttribute("size", list.size());
-        request.getRequestDispatcher("trangchu.jsp").forward(request, response);
+        request.getRequestDispatcher("first").forward(request, response);
 
     }
 

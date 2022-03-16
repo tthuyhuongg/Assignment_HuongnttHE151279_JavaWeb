@@ -5,7 +5,6 @@
  */
 package DAO;
 
-import com.sun.org.apache.xerces.internal.xs.PSVIProvider;
 import entity.Account;
 import entity.Cart;
 import entity.Categories;
@@ -17,7 +16,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
@@ -193,7 +191,7 @@ public class ProductDAO extends BaseDAO<Product> {
             ps = connection.prepareStatement(sql);
             ps.setString(1, name);
             ps.setString(2, image);
-             ps.executeUpdate();
+            ps.executeUpdate();
         } catch (Exception e) {
         }
 
@@ -261,6 +259,85 @@ public class ProductDAO extends BaseDAO<Product> {
             ps.executeUpdate();
         } catch (Exception e) {
         }
+    }
+
+    public int Total() {
+        int total = 0;
+        try {
+            String sql = "select COUNT(*) from Product";
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                total = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+        }
+        return total;
+    }
+
+    public ArrayList<Product> getpage(int page) {
+        ArrayList<Product> list = new ArrayList<>();
+        try {
+            String sql = "select top 4* from Product where idd>? order by idd ";
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, (page - 1) * 4);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Product p = new Product();
+                p.setMasp(rs.getString("masp"));
+                p.setNamesp(rs.getString("Name"));
+                p.setImage(rs.getString("Picture"));
+                p.setPrice(rs.getFloat("price"));
+                p.setTitle(rs.getString("title"));
+                p.setDescription(rs.getString("Description"));
+                list.add(p);
+            }
+        } catch (SQLException e) {
+        }
+        return list;
+    }
+
+    public ArrayList<Product> getFlNew() {
+        ArrayList<Product> list = new ArrayList<>();
+        try {
+            String sql = "select top 5* from Product order by dateup";
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Product p = new Product();
+                p.setMasp(rs.getString("masp"));
+                p.setNamesp(rs.getString("Name"));
+                p.setImage(rs.getString("Picture"));
+                p.setPrice(rs.getFloat("price"));
+                p.setTitle(rs.getString("title"));
+                p.setDescription(rs.getString("Description"));
+                list.add(p);
+            }
+        } catch (SQLException e) {
+        }
+        return list;
+    }
+
+    public ArrayList<Product> getFlP() {
+        ArrayList<Product> list = new ArrayList<>();
+        try {
+            String sql = "SELECT TOP 4* from Product\n"
+                    + "order by price desc ";
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Product p = new Product();
+                p.setMasp(rs.getString("masp"));
+                p.setNamesp(rs.getString("Name"));
+                p.setImage(rs.getString("Picture"));
+                p.setPrice(rs.getFloat("price"));
+                p.setTitle(rs.getString("title"));
+                p.setDescription(rs.getString("Description"));
+                list.add(p);
+            }
+        } catch (SQLException e) {
+        }
+        return list;
     }
 
     public void addoder(Customer cus, Cart cart) throws SQLException {

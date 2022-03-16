@@ -128,7 +128,7 @@
                                         </form>
                                     </div>
                                 </div>
-                            <c:set var="size" value="${sessionScope.size}"/>
+                                <c:set var="size" value="${sessionScope.size}"/>
                                 <div class="col-lg-3 ">
                                     <li class="side-menu"><a href="Cart.jsp">
                                             <i class="fa fa-shopping-bag"></i>
@@ -143,7 +143,7 @@
                 <!-- End Atribute Navigation -->
             </div>
             <!-- Start Side Menu -->
-            
+
             <!-- End Side Menu -->
         </nav>
         <!-- End Navigation -->
@@ -223,25 +223,47 @@
     <!-- Start Products  -->
     <div class="products-box">
         <div class="container">
+            <b><h1>GỢI Ý </h1></b><br>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-all text-center">
-                        <h1>The Flower</h1>
-                        <p></p>
+                        <div class="row">
+                            <c:forEach items="${listpr}" var="p">
+                                <div style="width: 200px;height: 400px" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 products-single fix">
+                                    <div class="box-img-hover">
+                                        <div class="type-lb">
+                                            <p class="sale"></p>
+                                        </div>
+                                        <img src="${p.image}" width="200px" height="300px" alt="Image">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+
+                                            </ul>
+                                            <a class="cart" href="cart?idsp=${p.masp}">Thêm Vào Giỏ Hàng</a>
+                                        </div>
+                                    </div>
+                                    <div><a class="btn hvr-hover">${p.title}</a></div>                       
+                                </div>
+                            </c:forEach>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
+
                     <div class="special-menu text-center">
-                        <div class="button-group filter-button-group">                            
+                        <b><h1>THE FLOWER</h1></b>
+                        <div class="button-group filter-button-group">  
                             <button data-filter=".best-seller">Tất Cả Các Sản Phẩm</button>
+                            <button data-filter=".new">Sản Phẩm Mới</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="row special-list">
+            <div  class="row special-list">
                 <c:forEach items="${listpro}" var="p">
                     <div class="col-lg-3 col-md-6 special-grid best-seller">
                         <div class="products-single fix">
@@ -253,8 +275,35 @@
                                 <div class="mask-icon">
                                     <ul>
                                         <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                        <!--                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>-->
-                                        <!--                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->
+
+                                    </ul>
+                                    <a class="cart" href="cart?idsp=${p.masp}">Thêm Vào Giỏ Hàng</a>
+                                </div>
+                            </div>
+                            <div class="why-text">
+                                <h4>${p.namesp}</h4>
+                                <h4>${p.title}</h4>
+                                <h4>${p.description}</h4>
+                                <h5>${p.price}</h5>  
+                            </div>
+                        </div>
+                    </div>
+                </c:forEach>
+
+            </div>
+            <div class="row special-list">
+                <c:forEach items="${listn}" var="p">
+                    <div  class="col-lg-3 col-md-6 special-grid new">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <div class="type-lb">
+                                    <p class="sale"></p>
+                                </div>
+                                <img src="${p.image}" class="img-fluid" alt="Image">
+                                <div class="mask-icon">
+                                    <ul>
+                                        <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+
                                     </ul>
                                     <a class="cart" href="cart?idsp=${p.masp}">Thêm Vào Giỏ Hàng</a>
                                 </div>

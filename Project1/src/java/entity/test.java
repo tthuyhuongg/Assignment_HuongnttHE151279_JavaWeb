@@ -15,11 +15,14 @@ import java.util.ArrayList;
 public class test {
     public static void main(String[] args) {
         ProductDAO p = new ProductDAO();
-//        ArrayList<Product> a = p.getHCM("1");
-        ArrayList<Categories> a = p.getAllCa();
-        for (Categories pro : a) {
-            System.out.println(pro);
+        ArrayList<Product> a = p.getpage(2);
+        for (Product pr : a) {
+            System.out.println(pr);
         }
+//        ArrayList<Categories> a = p.getAllCa();
+//        for (Categories pro : a) {
+//            System.out.println(pro);
+//        }
 //        for (Product pro : a) {
 //            System.out.println(pro);
 //        }
@@ -28,5 +31,12 @@ public class test {
 //        Account a =p.login("Admin", "Admin12345");
 //        System.out.println(a);
 //        p.signup("thuyhuong", "huong1234");
+        
+//        ArrayList<Product> a = p.getAll();
+//         System.out.println(a);
+//        p.delete("H001");
+//        System.out.println(a);
+//      
+
     }
 }

@@ -123,7 +123,7 @@
                     <h1><b>The Flower Shop Manage Product</b></h1><br>
                     <div class="table-main table-responsive">
                         <form name ="m" action="" method="post">
-                            <button><a href="addca?msp=${p.masp}">Thêm Danh Mục Sản Phẩm</a></button>
+<!--                            <button><a href="addca?msp=${p.masp}">Thêm Danh Mục Sản Phẩm</a></button>-->
                             <button><a href="add?msp=${p.masp}">Thêm Sản Phẩm</a></button>
                             <table class=" table-hover">
                                 <thead>
@@ -137,7 +137,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${listpro}" var="p">
+                                    <c:forEach items="${page}" var="p">
                                         <tr>
                                             <td class="name-pr">
                                                 <a href="#">
@@ -168,209 +168,215 @@
                                             </td>
                                         </tr>
                                     </c:forEach>
-                                </tbody>
+                                </tbody>                             
                             </table>
+                            <br>
+                            <c:forEach begin="1" end="${totalp}" varStatus="t">
+                                <button><a href="manager?index=${t.index}">${t.index}</a></button>
+                            </c:forEach>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+
+
     </div>
     <!-- End Cart -->
-        <!-- Start Instagram Feed  -->
-        <div class="instagram-box">
-            <div class="main-instagram owl-carousel owl-theme">
-                <div class="item">
-                    <div class="ins-inner-box">
-                        <img src="images/11.jpg"width="696px"height="300px" alt="" />
-                        <div class="hov-in">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+    <!-- Start Instagram Feed  -->
+    <div class="instagram-box">
+        <div class="main-instagram owl-carousel owl-theme">
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/11.jpg"width="696px"height="300px" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/trangdauu.jpg"width="696px"height="300px" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/ayeu.jpg"width="696px"height="300px" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/bsn.jpg"width="696px"height="300px" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/hoabo.jpg"width="696px"height="300px" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/hoatiec.jpg"width="696px"height="300px" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/trangdau.jpg"width="696px"height="300px" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/snnn.jpg"width="696px"height="300px" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/08-5783.jpg"width="696px"height="300px" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/snn.jpg"width="696px"height="300px" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Instagram Feed  -->
+
+
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Thời Gian Kinh Doanh</h3>
+                            <ul class="list-time">
+                                <li>Thứ 2 - Thứ 6: 08.00sáng đến 20.00 tối</li> <li>Thứ 7: 10.00 sáng đến 20.00 tối</li> <li>Chủ Nhật: <span>Nghỉ</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Newsletter</h3>
+                            <form class="newsletter-box">
+                                <div class="form-group">
+                                    <input class="" type="email" name="Email" placeholder="Email Address*" />
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <button class="btn hvr-hover" type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Mạng Xã Hội</h3>
+                            <p>Liên hệ: </p>
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="ins-inner-box">
-                        <img src="images/trangdauu.jpg"width="696px"height="300px" alt="" />
-                        <div class="hov-in">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-widget">
+                            <h4>The Flowler shop</h4>
+                            <p>The Flower Shop cung cấp các sản phẩm hoa tươi, hoa chúc mừng, hoa sinh nhật, hoa khai trương, hoa văn phòng, hoa sự kiện, hoa cưới, xe hoa, cổng hoa, hoa trang trí, đặc biệt là dịch vụ điện hoa toàn quốc …với nhiều mẫu hoa mới lạ, giá cả hợp lý.</p>
                         </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="ins-inner-box">
-                        <img src="images/ayeu.jpg"width="696px"height="300px" alt="" />
-                        <div class="hov-in">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link">
+                            <h4>Thông Tin</h4>
+                            <ul>
+                                <li><a href="#">The Flower Shop</a></li>
+                                <li><a href="#">Dịch vụ khách hàng</a></li>
+                                <li><a href="#">Điều Khoản; Điều Kiện</a></li>
+                                <li><a href="#">Chính Sách Bảo Mật</a></li>
+                                <li><a href="#">Thông tin giao hàng</a></li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="ins-inner-box">
-                        <img src="images/bsn.jpg"width="696px"height="300px" alt="" />
-                        <div class="hov-in">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="ins-inner-box">
-                        <img src="images/hoabo.jpg"width="696px"height="300px" alt="" />
-                        <div class="hov-in">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="ins-inner-box">
-                        <img src="images/hoatiec.jpg"width="696px"height="300px" alt="" />
-                        <div class="hov-in">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="ins-inner-box">
-                        <img src="images/trangdau.jpg"width="696px"height="300px" alt="" />
-                        <div class="hov-in">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="ins-inner-box">
-                        <img src="images/snnn.jpg"width="696px"height="300px" alt="" />
-                        <div class="hov-in">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="ins-inner-box">
-                        <img src="images/08-5783.jpg"width="696px"height="300px" alt="" />
-                        <div class="hov-in">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="ins-inner-box">
-                        <img src="images/snn.jpg"width="696px"height="300px" alt="" />
-                        <div class="hov-in">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link-contact">
+                            <h4>Liên Hệ</h4>
+                            <ul>
+                                <li>
+                                    <p><i class="fas fa-map-marker-alt"></i>Địa Chỉ: The Flower Shop <br>Thạch Hòa-Thạch Thất-Hà Nội</p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+84 98879888</a></p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">theflowershop@gmail.com</a></p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Instagram Feed  -->
+    </footer>
+    <!-- End Footer  -->
 
+    <!-- Start copyright  -->
+    <!--    <div class="footer-copyright">
+            <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By :
+                <a href="https://html.design/">html design</a></p>
+        </div>-->
+    <!-- End copyright  -->
 
-        <footer>
-            <div class="footer-main">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <div class="footer-top-box">
-                                <h3>Thời Gian Kinh Doanh</h3>
-                                <ul class="list-time">
-                                    <li>Thứ 2 - Thứ 6: 08.00sáng đến 20.00 tối</li> <li>Thứ 7: 10.00 sáng đến 20.00 tối</li> <li>Chủ Nhật: <span>Nghỉ</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <div class="footer-top-box">
-                                <h3>Newsletter</h3>
-                                <form class="newsletter-box">
-                                    <div class="form-group">
-                                        <input class="" type="email" name="Email" placeholder="Email Address*" />
-                                        <i class="fa fa-envelope"></i>
-                                    </div>
-                                    <button class="btn hvr-hover" type="submit">Submit</button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <div class="footer-top-box">
-                                <h3>Mạng Xã Hội</h3>
-                                <p>Liên hệ: </p>
-                                <ul>
-                                    <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <div class="footer-widget">
-                                <h4>The Flowler shop</h4>
-                                <p>The Flower Shop cung cấp các sản phẩm hoa tươi, hoa chúc mừng, hoa sinh nhật, hoa khai trương, hoa văn phòng, hoa sự kiện, hoa cưới, xe hoa, cổng hoa, hoa trang trí, đặc biệt là dịch vụ điện hoa toàn quốc …với nhiều mẫu hoa mới lạ, giá cả hợp lý.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <div class="footer-link">
-                                <h4>Thông Tin</h4>
-                                <ul>
-                                    <li><a href="#">The Flower Shop</a></li>
-                                    <li><a href="#">Dịch vụ khách hàng</a></li>
-                                    <li><a href="#">Điều Khoản; Điều Kiện</a></li>
-                                    <li><a href="#">Chính Sách Bảo Mật</a></li>
-                                    <li><a href="#">Thông tin giao hàng</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 col-sm-12">
-                            <div class="footer-link-contact">
-                                <h4>Liên Hệ</h4>
-                                <ul>
-                                    <li>
-                                        <p><i class="fas fa-map-marker-alt"></i>Địa Chỉ: The Flower Shop <br>Thạch Hòa-Thạch Thất-Hà Nội</p>
-                                    </li>
-                                    <li>
-                                        <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+84 98879888</a></p>
-                                    </li>
-                                    <li>
-                                        <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">theflowershop@gmail.com</a></p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- End Footer  -->
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
-        <!-- Start copyright  -->
-        <!--    <div class="footer-copyright">
-                <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By :
-                    <a href="https://html.design/">html design</a></p>
-            </div>-->
-        <!-- End copyright  -->
-
-        <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-
-        <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- ALL PLUGINS -->
-        <script src="js/jquery.superslides.min.js"></script>
-        <script src="js/bootstrap-select.js"></script>
-        <script src="js/inewsticker.js"></script>
-        <script src="js/bootsnav.js."></script>
-        <script src="js/images-loded.min.js"></script>
-        <script src="js/isotope.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/baguetteBox.min.js"></script>
-        <script src="js/form-validator.min.js"></script>
-        <script src="js/contact-form-script.js"></script>
-        <script src="js/custom.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/jquery.superslides.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/inewsticker.js"></script>
+    <script src="js/bootsnav.js."></script>
+    <script src="js/images-loded.min.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>
+    <script src="js/custom.js"></script>
 </body>
 
 </html>

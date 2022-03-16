@@ -35,8 +35,19 @@ public class managerServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         ProductDAO p = new ProductDAO();
-        ArrayList<Product> listp = p.getAll();
-        request.setAttribute("listpro", listp);
+        int total = p.Total();
+        String ind= request.getParameter("index");
+        if (ind == null) {
+            ind = "1";
+        }
+        ArrayList<Product> list = p.getpage(Integer.parseInt(ind));
+        if(total % 4 !=0){
+            total = total/4 + 1;
+        }else{
+            total = total/4;
+        }
+        request.setAttribute("page", list);
+        request.setAttribute("totalp", total);
         request.setCharacterEncoding("utf-8");
         request.getRequestDispatcher("Manager.jsp").forward(request, response);
     }
