@@ -30,19 +30,19 @@ public class Cart {
         this.list = list;
     }
     
-    public Item getitembymsp(String masp){
+    public Item getitembymsp(int msp){
         for (Item i: list) {
-            if(i.getSp().getMasp().equals(masp)){
+            if(i.getSp().getMasp()== msp){
                 return i;
             }
         }
         return null;
     }
-    public int quantity(String masp ){
+    public int quantity(int msp ){
         int qua = 0;
         for (Item i : list) {
-            if(i.getSp().getMasp().equals(masp)){
-                qua = i.getSp().getQuantity();
+            if(i.getSp().getMasp()==msp){
+                qua= i.getSp().getQuantity();
             }
         }
         return qua;
@@ -55,7 +55,7 @@ public class Cart {
             list.add(t);
         }
     }
-    public void remove(String masp){
+    public void remove(int masp){
         if(getitembymsp(masp)!= null){
             list.remove(getitembymsp(masp));
         }

@@ -12,22 +12,20 @@ import java.util.Date;
  * @author thuy huong
  */
 public class Product {
-    private String masp;
+    private int masp;
     private String namesp;
     private String image;
     private double price;
     private String title;
     private String description;
     private String date;
-    private int spkm;
-    private double pricekm;
     private int quantity;
     private int idcate;
 
     public Product() {
     }
 
-    public Product(String masp, String namesp, String image, double price, String title, String description, String date, int spkm, double pricekm, int quantity, int idcate) {
+    public Product(int masp, String namesp, String image, double price, String title, String description, String date, int quantity, int idcate) {
         this.masp = masp;
         this.namesp = namesp;
         this.image = image;
@@ -35,21 +33,15 @@ public class Product {
         this.title = title;
         this.description = description;
         this.date = date;
-        this.spkm = spkm;
-        this.pricekm = pricekm;
         this.quantity = quantity;
         this.idcate = idcate;
     }
 
-   
-
-    
-
-    public String getMasp() {
+    public int getMasp() {
         return masp;
     }
 
-    public void setMasp(String masp) {
+    public void setMasp(int masp) {
         this.masp = masp;
     }
 
@@ -93,14 +85,6 @@ public class Product {
         this.description = description;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public String getDate() {
         return date;
     }
@@ -109,20 +93,12 @@ public class Product {
         this.date = date;
     }
 
-    public int getSpkm() {
-        return spkm;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setSpkm(int spkm) {
-        this.spkm = spkm;
-    }
-
-    public double getPricekm() {
-        return pricekm;
-    }
-
-    public void setPricekm(double pricekm) {
-        this.pricekm = pricekm;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public int getIdcate() {
@@ -133,10 +109,9 @@ public class Product {
         this.idcate = idcate;
     }
 
-    
     @Override
     public String toString() {
-        return "Product{" + "masp=" + masp + ", namesp=" + namesp + ", image=" + image + ", price=" + price + ", title=" + title + ", description=" + description + ", date=" + date + ", spkm=" + spkm + ", pricekm=" + pricekm + ", quantity=" + quantity + '}';
+        return "Product{" + "masp=" + masp + ", namesp=" + namesp + ", image=" + image + ", price=" + price + ", title=" + title + ", description=" + description + ", date=" + date + ", quantity=" + quantity + ", idcate=" + idcate + '}';
     }
 
 }
