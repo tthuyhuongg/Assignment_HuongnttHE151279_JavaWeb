@@ -220,7 +220,7 @@
                             <div class="price-box-bar">
                                 <div class="cart-and-bay-btn">
                                     <a class="btn hvr-hover" data-fancybox-close="" href="#">Mua</a>
-                                    <a class="btn hvr-hover" data-fancybox-close="" href="cart?idsp=${p.masp}">Thêm Vào Giỏ Hàng</a>
+                                    <a class="btn hvr-hover" data-fancybox-close="" href="cart?idsp=${detailsp.masp}">Thêm Vào Giỏ Hàng</a>
                                 </div>
                             </div>
                         </div>

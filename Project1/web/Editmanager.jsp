@@ -112,15 +112,7 @@
                                             <tr>
                                                 <td>Ngày Đăng</td>
                                                 <td><input type="text" name ="date" value="${listedit.date}"</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Sản phẩm sales</td>
-                                                <td><input type="text" name ="spkm" value="${listedit.spkm}"</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Giá sales</td>
-                                                <td><input type="text" name ="pricekm" value="${listedit.pricekm}"</td>
-                                            </tr>
+                                            </tr>                                         
                                             <tr>
                                                 <td>Số Lượng</td>
                                                 <td><input type="text" name ="quantity" value="${listedit.quantity}"</td>

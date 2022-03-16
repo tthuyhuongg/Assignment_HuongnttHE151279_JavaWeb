@@ -67,12 +67,12 @@ public class ProductDAO extends BaseDAO<Product> {
 
     }
 
-    public ArrayList<Product> getHCM(String id) {
+    public ArrayList<Product> getHCM(int id) {
         ArrayList<Product> list = new ArrayList<>();
-        String sql = "select * from Product where Id=?";
+        String sql = "select * from Product where Id = ?";
         try {
             ps = connection.prepareStatement(sql);
-            ps.setString(1, id);
+            ps.setInt(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Product p = new Product();
@@ -82,6 +82,9 @@ public class ProductDAO extends BaseDAO<Product> {
                 p.setPrice(rs.getFloat("price"));
                 p.setTitle(rs.getString("title"));
                 p.setDescription(rs.getString("Description"));
+                p.setDate(rs.getString("dateup"));
+                p.setIdcate(rs.getInt("Id"));
+                p.setQuantity(rs.getInt("quantity"));
                 list.add(p);
             }
         } catch (SQLException e) {
@@ -216,7 +219,7 @@ public class ProductDAO extends BaseDAO<Product> {
         }
     }
 
-    public void editsp(String msp, String name, String image, double price, String title, String des, String date, int pkm, double giakm, int quan, int caid) {
+    public void editsp(String msp, String name, String image, double price, String title, String des, String date, int quan, int caid) {
         String sql = "UPDATE [projectt].[dbo].[Product]\n"
                 + "   SET [Name] =?\n"
                 + "      ,[Picture] =?\n"
@@ -224,8 +227,6 @@ public class ProductDAO extends BaseDAO<Product> {
                 + "      ,[title] =?\n"
                 + "      ,[Description] =?\n"
                 + "      ,[dateup] =?\n"
-                + "      ,[Pkm] =?\n"
-                + "      ,[pricekm] = ?\n"
                 + "      ,[quantity] =?\n"
                 + "      ,[Id] =?\n"
                 + " WHERE masp=?";
@@ -237,33 +238,27 @@ public class ProductDAO extends BaseDAO<Product> {
             ps.setString(4, title);
             ps.setString(5, des);
             ps.setString(6, date);
-            ps.setInt(7, pkm);
-            ps.setDouble(8, giakm);
-            ps.setInt(9, quan);
-            ps.setInt(10, caid);
-            ps.setString(11, msp);
+            ps.setInt(7, quan);
+            ps.setInt(8, caid);
+            ps.setString(9, msp);
             ps.executeUpdate();
         } catch (Exception e) {
         }
 
     }
 
-    public void addproduct(String masp, String name, String image, double price, String title, String des, String date, int pkm, double pricekm, int quan, int id) {
-        String sql = "insert into Product(masp,Name,Picture,price,title,[Description],dateup,Pkm,pricekm,quantity,Id) values\n"
-                + "(?,?,?,?,?,?,?,?,?,?,?)";
+    public void addproduct( String name, String image, double price, String title, String des, String date, int id, int quan) {
+        String sql = "insert into Product values(?,?,?,?,?,?,?,?)";
         try {
             ps = connection.prepareStatement(sql);
-            ps.setString(1, masp);
-            ps.setString(2, name);
-            ps.setString(3, image);
-            ps.setDouble(4, price);
-            ps.setString(5, title);
-            ps.setString(6, des);
-            ps.setString(7, date);
-            ps.setInt(8, pkm);
-            ps.setDouble(9, pricekm);
-            ps.setInt(10, quan);
-            ps.setInt(11, id);
+            ps.setString(1, name);
+            ps.setString(2, image);
+            ps.setDouble(3, price);
+            ps.setString(4, title);
+            ps.setString(5, des);
+            ps.setString(6, date);
+            ps.setInt(7, id);
+            ps.setInt(8, quan);
             ps.executeUpdate();
         } catch (Exception e) {
         }
@@ -286,7 +281,7 @@ public class ProductDAO extends BaseDAO<Product> {
     public ArrayList<Product> getpage(int page) {
         ArrayList<Product> list = new ArrayList<>();
         try {
-            String sql = "select top 4* from Product where idd>? order by idd ";
+            String sql = "select top 4* from Product where masp >? order by masp";
             ps = connection.prepareStatement(sql);
             ps.setInt(1, (page - 1) * 4);
             rs = ps.executeQuery();

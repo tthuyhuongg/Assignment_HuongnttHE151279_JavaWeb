@@ -140,24 +140,16 @@
                                     <c:forEach items="${page}" var="p">
                                         <tr>
                                             <td class="name-pr">
-                                                <a href="#">
                                                     ${p.masp}
-                                                </a>
                                             </td>
                                             <td class="name-pr">
-                                                <a href="#">
                                                     ${p.namesp}
-                                                </a>
                                             </td>
                                             <td class="thumbnail-img">
-                                                <a href="#">
                                                     <img class="img-fluid" src="${p.image}" alt="" />
-                                                </a>
                                             </td>
                                             <td class="name-pr">
-                                                <a href="#">
                                                     ${p.description}
-                                                </a>
                                             </td>
                                             <td class="price-pr">
                                                 <p>${p.price}</p>

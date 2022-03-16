@@ -139,18 +139,6 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>Sản phẩm sales</th>
-                                                        <td class="name-pr">
-                                                            <input type ="text" name ="spkm" value="">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Giá sales</th>
-                                                        <td class="name-pr">
-                                                            <input type ="text" name ="pricekm" value="">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
 
                                                         <th>Số Lượng</th>
                                                         <td class="name-pr">

@@ -80,12 +80,10 @@ public class editServlet extends HttpServlet {
         String des = request.getParameter("des");
         String date = request.getParameter("date");
         int caid = Integer.parseInt(request.getParameter("categorycaid"));
-        int spkm = Integer.parseInt(request.getParameter("spkm")) ;
-        double giakm = Double.parseDouble(request.getParameter("pricekm"));
         int quantity = Integer.parseInt(request.getParameter("quantity")) ;
         
         ProductDAO p = new ProductDAO();
-        p.editsp(msp, name, image, price, title, des, date, spkm, giakm, quantity,caid);
+        p.editsp(msp, name, image, price, title, des, date, quantity,caid);
         
         request.setCharacterEncoding("utf-8");
         response.sendRedirect("manager");

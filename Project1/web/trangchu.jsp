@@ -65,10 +65,10 @@
                                     <c:if test="${sessionScope.account == null}">
                                     <li><a href="Login.jsp"><i class="fas fa-headset"></i> Đăng Nhập</a></li>
                                     </c:if>
-                                    <c:if test="${sessionScope.account.isAdmin == 0}">
+                                    <c:if test="${sessionScope.account.role == 'user'}">
                                     <li><a href="#"><i class="fa fa-user s_color"></i>Người Dùng</a></li>
                                     </c:if>
-                                    <c:if test="${sessionScope.account.isAdmin == 1}">
+                                    <c:if test="${sessionScope.account.role == 'admin'}">
                                     <li><a href="manager"><i class="fa fa-user s_color"></i>Người Quản Lý</a></li>
                                     </c:if>
                             </ul>

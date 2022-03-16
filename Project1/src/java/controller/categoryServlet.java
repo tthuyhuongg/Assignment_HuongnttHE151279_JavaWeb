@@ -35,12 +35,12 @@ public class categoryServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String cateID = request.getParameter("cid");
+            
             ProductDAO p = new ProductDAO();
             ArrayList<Product> listp = p.getAll();
-            ArrayList<Product> listhcm = p.getHCM("1");
-            ArrayList<Product> listty = p.getHCM("2");
-            ArrayList<Product> listcb = p.getHCM("3");
+            ArrayList<Product> listhcm = p.getHCM(1);
+            ArrayList<Product> listty = p.getHCM(2);
+            ArrayList<Product> listcb = p.getHCM(3);
             request.setAttribute("listcm", listhcm);
             request.setAttribute("listty", listty);
             request.setAttribute("listcb", listcb);
