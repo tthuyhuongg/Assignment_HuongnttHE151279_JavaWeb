@@ -93,56 +93,56 @@
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
-                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="first">Trang Chủ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.jsp">The Flower<br> Shop</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Cửa Hàng</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="shop.jsp">Sidebar Shop</a></li>
-                                <li><a href="detail">Shop Detail</a></li>
-                                <li><a href="Cart.jsp">Cart</a></li>
-                                <li><a href="checkout.jsp">Checkout</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="category">Danh mục<br> sản phẩm</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.jsp">Liên Hệ</a></li>
-                    </ul>
-                </div>
+                        <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class="nav-item active"><a class="nav-link" href="first">Trang Chủ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.jsp">The Flower<br> Shop</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Cửa Hàng</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="shop.jsp">Sidebar Shop</a></li>
+                                    <li><a href="detail">Shop Detail</a></li>
+                                    <li><a href="Cart.jsp">Cart</a></li>
+                                    <li><a href="checkout.jsp">Checkout</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="category">Danh mục<br> sản phẩm</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.jsp">Liên Hệ</a></li>
+                        </ul>
+                    </div>
                     <!-- /.navbar-collapse -->
 
                     <!-- Start Atribute Navigation -->
-                         <div class="attr-nav">
-                    <div class="container">
-                        <ul>
-                            <div class="row">
-                                <div class="col-lg-9">
-                                    <div class="input-group rounded">
-                                        <form action="search" method="post">
-                                            <input name="txt" type="text" value="${note}"/>
-                                            <button type="submit" >
-                                                <li class="search"><i class="fa fa-search"></i></li>
-                                            </button>
-                                        </form>
+                    <div class="attr-nav">
+                        <div class="container">
+                            <ul>
+                                <div class="row">
+                                    <div class="col-lg-9">
+                                        <div class="input-group rounded">
+                                            <form action="search" method="post">
+                                                <input name="txt" type="text" value="${note}"/>
+                                                <button type="submit" >
+                                                    <li class="search"><i class="fa fa-search"></i></li>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <c:set var="size" value="${sessionScope.size}"/>
+                                    <div class="col-lg-3 ">
+                                        <li class="side-menu"><a href="Cart.jsp">
+                                                <i class="fa fa-shopping-bag"></i>
+                                                <span class="badge">${size}</span>
+                                                <p>Giỏ Hàng</p>
+                                            </a></li>
                                     </div>
                                 </div>
-
-                                <c:set var="size" value="${sessionScope.size}"/>
-                                <div class="col-lg-3 ">
-                                    <li class="side-menu"><a href="Cart.jsp">
-                                            <i class="fa fa-shopping-bag"></i>
-                                            <span class="badge">${size}</span>
-                                            <p>Giỏ Hàng</p>
-                                        </a></li>
-                                </div>
-                            </div>
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
-                </div>
                     <!-- End Atribute Navigation -->
                 </div>
                 <!-- Start Side Menu -->
-                
+
                 <!-- End Side Menu -->
             </nav>
             <!-- End Navigation -->
@@ -200,14 +200,14 @@
                                     <c:forEach items="${o.list}" var="p">
                                         <tr>
                                             <td class="thumbnail-img">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="${p.sp.image}" alt="" />
-                                                </a>
+
+                                                <img class="img-fluid" src="${p.sp.image}" alt="" />
+
                                             </td>
                                             <td class="name-pr">
-                                                <a href="#">
-                                                    ${p.sp.namesp}
-                                                </a>
+
+                                                ${p.sp.namesp}
+
                                             </td>
                                             <td class="price-pr">
                                                 <p>${p.price}</p>
@@ -235,16 +235,16 @@
 
                 <div class="row my-5">
                     <div class="col-lg-6 col-sm-6">
-<!--                        <div class="coupon-box">
-                            <div class="input-group input-group-sm">
-                                <input class="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text">
-                                <div class="input-group-append">
-                                    <button class="btn btn-theme" type="button">Apply Coupon</button>
-                                </div>
-                            </div>
-                        </div>-->
+                        <!--                        <div class="coupon-box">
+                                                    <div class="input-group input-group-sm">
+                                                        <input class="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text">
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-theme" type="button">Apply Coupon</button>
+                                                        </div>
+                                                    </div>
+                                                </div>-->
                     </div>
-                   
+
                 </div>
 
                 <div class="row my-5">

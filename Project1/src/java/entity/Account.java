@@ -10,8 +10,10 @@ package entity;
  * @author thuy huong
  */
 public class Account {
+    public static final String admin ="admin";
+    public static final String user ="user";
     private int id;
-    private String user;
+    private String usern;
     private String pass;
     private String name;
     private String address;
@@ -23,9 +25,9 @@ public class Account {
     public Account() {
     }
 
-    public Account(int id, String user, String pass, String name, String address, String email, String phone, String role) {
+    public Account(int id, String usern, String pass, String name, String address, String email, String phone, String role) {
         this.id = id;
-        this.user = user;
+        this.usern = usern;
         this.pass = pass;
         this.name = name;
         this.address = address;
@@ -46,8 +48,8 @@ public class Account {
         return user;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUser(String usern) {
+        this.usern = usern;
     }
 
     public String getPass() {
@@ -100,7 +102,7 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" + "id=" + id + ", user=" + user + ", pass=" + pass + ", name=" + name + ", address=" + address + ", email=" + email + ", phone=" + phone + ", role=" + role + '}';
+        return "Account{" + "id=" + id + ", user=" + usern + ", pass=" + pass + ", name=" + name + ", address=" + address + ", email=" + email + ", phone=" + phone + ", role=" + role + '}';
     }
   
 }

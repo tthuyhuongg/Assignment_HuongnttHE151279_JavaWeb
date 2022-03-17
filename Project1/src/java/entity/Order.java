@@ -16,15 +16,17 @@ public class Order {
     private String cusid;
     private String date;
     private double Total;
+    private int ship;
 
     public Order() {
     }
 
-    public Order(int id, String cusid, String date, double Total) {
+    public Order(int id, String cusid, String date, double Total, int ship) {
         this.id = id;
         this.cusid = cusid;
         this.date = date;
         this.Total = Total;
+        this.ship = ship;
     }
 
     public int getId() {
@@ -59,11 +61,18 @@ public class Order {
         this.Total = Total;
     }
 
+    public int getShip() {
+        return ship;
+    }
+
+    public void setShip(int ship) {
+        this.ship = ship;
+    }
+
     @Override
     public String toString() {
-        return "Order{" + "id=" + id + ", cusid=" + cusid + ", date=" + date + ", Total=" + Total + '}';
+        return "Order{" + "id=" + id + ", cusid=" + cusid + ", date=" + date + ", Total=" + Total + ", ship=" + ship + '}';
     }
-    
-    
+
     
 }

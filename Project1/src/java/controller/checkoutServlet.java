@@ -6,21 +6,25 @@
 package controller;
 
 import DAO.ProductDAO;
-import entity.Categories;
-import entity.Product;
+import entity.Account;
+import entity.Cart;
+import entity.Order;
+import entity.Ship;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author thuy huong
  */
-public class managerServlet extends HttpServlet {
+public class checkoutServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,26 +38,24 @@ public class managerServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        ProductDAO p = new ProductDAO();
-        int total = p.Total();
-        String ind= request.getParameter("index");
-        if (ind == null) {
-            ind = "1";
+        HttpSession se = request.getSession();
+        Cart cart = null;
+        if (se.getAttribute("cart") != null) {
+            cart = (Cart) se.getAttribute("cart");
         }
-        int indd = Integer.parseInt(ind);
-        ArrayList<Product> list = p.getpage(indd);
-        if(total % 4 !=0){
-            total = total/4 + 1;
-        }else{
-            total = total/4;
+        Account acc = null;
+        if (se.getAttribute("account") != null) {
+            acc = (Account) se.getAttribute("account");
+            ProductDAO d = new ProductDAO();
+            se.removeAttribute("cart");
+            se.setAttribute("size", 0);
+            request.getRequestDispatcher("checkout.jsp").forward(request, response);
+        } else {
+            response.sendRedirect("Login.jsp");
         }
-        request.setAttribute("page", list);
-        request.setAttribute("totalp", total);
-        request.setCharacterEncoding("utf-8");
-        request.getRequestDispatcher("Manager.jsp").forward(request, response);
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -80,15 +82,25 @@ public class managerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        String name = request.getParameter("name");
+        String user = request.getParameter("user");
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
+        ProductDAO p = new ProductDAO();
+        
+        response.sendRedirect("done");
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
+
+
+
+/**
+ * Returns a short description of the servlet.
+ *
+ * @return a String containing servlet description
+ */
+@Override
+        public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 

@@ -6,14 +6,15 @@
 package DAO;
 
 import entity.Account;
-import entity.Cart;
 import entity.Categories;
-import entity.Item;
+import entity.Oderdetail;
+import entity.Order;
 import entity.Product;
+import entity.Ship;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
@@ -247,7 +248,7 @@ public class ProductDAO extends BaseDAO<Product> {
 
     }
 
-    public void addproduct( String name, String image, double price, String title, String des, String date, int id, int quan) {
+    public void addproduct(String name, String image, double price, String title, String des, String date, int id, int quan) {
         String sql = "insert into Product values(?,?,?,?,?,?,?,?)";
         try {
             ps = connection.prepareStatement(sql);
@@ -293,6 +294,9 @@ public class ProductDAO extends BaseDAO<Product> {
                 p.setPrice(rs.getFloat("price"));
                 p.setTitle(rs.getString("title"));
                 p.setDescription(rs.getString("Description"));
+                p.setDate(rs.getString("dateup"));
+                p.setIdcate(rs.getInt("Id"));
+                p.setQuantity(rs.getInt("quantity"));
                 list.add(p);
             }
         } catch (SQLException e) {
@@ -341,6 +345,52 @@ public class ProductDAO extends BaseDAO<Product> {
         } catch (SQLException e) {
         }
         return list;
+    }
+
+    public int ship(Ship p) throws SQLException {
+        try {
+            String sql = "INSERT INTO [projectt].[dbo].[Ship]\n"
+                    + "           ([name]\n"
+                    + "           ,[phone]\n"
+                    + "           ,[address])\n"
+                    + "     VALUES\n"
+                    + "           (?,?,?)";
+            ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, p.getName());
+            ps.setString(2, p.getPhone());
+            ps.setString(3, p.getAddress());
+            ps.executeUpdate();
+            rs = ps.getGeneratedKeys();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (Exception e) {
+        }
+        return 0;
+    }
+
+    public int oder(Order o) {
+        try {
+            String sql = "INSERT INTO [projectt].[dbo].[Oder]\n"
+                    + "           ([cusid]\n"
+                    + "           ,[orderdate]\n"
+                    + "           ,[totalmoney]\n"
+                    + "           ,[shipid])\n"
+                    + "     VALUES\n"
+                    + "           (?,?,?,?)";
+            ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1, o.getId());
+            ps.setString(2, o.getDate());
+            ps.setDouble(3, o.getTotal());
+            ps.setInt(4, o.getShip());
+            ps.executeUpdate();
+            rs = ps.getGeneratedKeys();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (Exception e) {
+        }
+        return 0;
     }
 
 }

@@ -76,6 +76,10 @@
         <servlet-name>AddcaServlet</servlet-name>
         <servlet-class>controller.AddcaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>thanksServlet</servlet-name>
+        <servlet-class>controller.thanksServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>firstservlet</servlet-name>
         <url-pattern>/first</url-pattern>
@@ -151,6 +155,10 @@
     <servlet-mapping>
         <servlet-name>AddcaServlet</servlet-name>
         <url-pattern>/addca</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>thanksServlet</servlet-name>
+        <url-pattern>/done</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

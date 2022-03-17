@@ -11,16 +11,18 @@ package entity;
  */
 public class Oderdetail {
     private int id;
-    private String omsp;
+    private String pname;
+    private String image;
     private int quantity;
     private double price;
 
     public Oderdetail() {
     }
 
-    public Oderdetail(int id, String omsp, int quantity, double price) {
+    public Oderdetail(int id, String pname, String image, int quantity, double price) {
         this.id = id;
-        this.omsp = omsp;
+        this.pname = pname;
+        this.image = image;
         this.quantity = quantity;
         this.price = price;
     }
@@ -33,12 +35,20 @@ public class Oderdetail {
         this.id = id;
     }
 
-    public String getOmsp() {
-        return omsp;
+    public String getPname() {
+        return pname;
     }
 
-    public void setOmsp(String omsp) {
-        this.omsp = omsp;
+    public void setPname(String pname) {
+        this.pname = pname;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public int getQuantity() {
@@ -59,7 +69,7 @@ public class Oderdetail {
 
     @Override
     public String toString() {
-        return "Oderdetail{" + "id=" + id + ", omsp=" + omsp + ", quantity=" + quantity + ", price=" + price + '}';
+        return "Oderdetail{" + "id=" + id + ", pname=" + pname + ", image=" + image + ", quantity=" + quantity + ", price=" + price + '}';
     }
 
     
