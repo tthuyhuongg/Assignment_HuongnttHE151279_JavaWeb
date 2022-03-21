@@ -72,6 +72,7 @@ public class editServlet extends HttpServlet {
             throws ServletException, IOException {
         
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
         String msp = request.getParameter("id");
         String name = request.getParameter("name");
         String image = request.getParameter("image");

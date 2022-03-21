@@ -60,13 +60,13 @@ public class login extends HttpServlet {
                 if (c.getName().equals("passC")) {
                     pass = c.getValue();
                 }
-                if(user!= null && pass != null){
+                if (user != null && pass != null) {
                     break;
                 }
             }
-            if(user != null && pass != null){
+            if (user != null && pass != null) {
                 Account acc = new ProductDAO().login(user, pass);
-                if(acc!= null){
+                if (acc != null) {
                     request.getSession().setAttribute("account", acc);
                     response.sendRedirect("first");
                     return;
@@ -104,15 +104,13 @@ public class login extends HttpServlet {
             Cookie u = new Cookie("userC", user);
             Cookie pw = new Cookie("passC", pass);
             u.setMaxAge(60 * 60 * 24);
-            if (re != null) {
-                pw.setMaxAge(60 * 60 * 24);
-            } else {
-                pw.setMaxAge(0);
-            }
+            pw.setMaxAge(60 * 60 * 24);
+            pw.setMaxAge(0);
+
             response.addCookie(u);
             response.addCookie(pw);
-            
-           String loginn = (String) session.getAttribute("loginn");
+
+            String loginn = (String) session.getAttribute("loginn");
             response.sendRedirect(loginn);
         }
     }

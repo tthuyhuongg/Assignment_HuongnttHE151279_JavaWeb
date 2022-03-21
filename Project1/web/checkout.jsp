@@ -4,6 +4,7 @@
     Author     : thuy huong
 --%>
 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -237,7 +238,7 @@
                                                                 <P>${p.sp.namesp}</p>
                                                             </td>
                                                             <td class="price-pr">
-                                                                <p>${p.price}</p>
+                                                                <p><fmt:formatNumber maxFractionDigits="3" value="${p.price*1000}" type="number"></fmt:formatNumber></p>
                                                             </td>
                                                             <td>
                                                                 <input type="button" readonly value="${p.quantity}"/>

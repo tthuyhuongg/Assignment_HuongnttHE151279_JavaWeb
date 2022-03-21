@@ -4,6 +4,7 @@
     Author     : thuy huong
 --%>
 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -210,7 +211,7 @@
 
                                             </td>
                                             <td class="price-pr">
-                                                <p>${p.price}</p>
+                                                <p><fmt:formatNumber maxFractionDigits="3" value="${p.price* 1000}" type="number"></fmt:formatNumber></p>
                                             </td>
                                             <td>
                                                 <button><a href="quantity?num=-1&msp=${p.sp.masp}">-</a></button>
@@ -218,7 +219,7 @@
                                                 <button><a href="quantity?num=1&msp=${p.sp.masp}">+</a></button>
                                             </td>
                                             <td class="total-pr">
-                                                <p>${p.quantity * p.price}00</p>
+                                                <p><fmt:formatNumber maxFractionDigits="3" value="${p.quantity * p.price*1000}" type="number"></fmt:formatNumber></p>
                                             </td>
                                             <td class="remove-pr">
                                                 <a href="delete?msp=${p.sp.masp}">
@@ -254,7 +255,7 @@
                             <h3>Đơn Đặt Hàng</h3>
                             <div class="d-flex gr-total">
                                 <h5>Tổng Thanh Toán</h5>
-                                <div class="ml-auto h5">${o.total()}00</div>
+                                <div class="ml-auto h5"><fmt:formatNumber maxFractionDigits="3" value="${o.total()*1000}" type="number"></fmt:formatNumber></div>
                             </div>
                             <hr> </div>
                     </div>

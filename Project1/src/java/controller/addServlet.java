@@ -65,6 +65,8 @@ public class addServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
+        int masp = Integer.parseInt(request.getParameter("masp"));
         String name = request.getParameter("name");
         String image = request.getParameter("image");
         double price = Double.parseDouble(request.getParameter("price"));
@@ -74,7 +76,7 @@ public class addServlet extends HttpServlet {
         int quantity = Integer.parseInt(request.getParameter("quan"));
         int caid = Integer.parseInt(request.getParameter("cateid"));
         ProductDAO p = new ProductDAO();
-        p.addproduct(name, image, price, title, des, date,caid, quantity);
+        p.addproduct(masp,name, image, price, title, des, date,caid, quantity);
         response.sendRedirect("manager");
   
     }

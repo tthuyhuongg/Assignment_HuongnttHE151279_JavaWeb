@@ -248,18 +248,19 @@ public class ProductDAO extends BaseDAO<Product> {
 
     }
 
-    public void addproduct(String name, String image, double price, String title, String des, String date, int id, int quan) {
-        String sql = "insert into Product values(?,?,?,?,?,?,?,?)";
+    public void addproduct(int masp,String name, String image, double price, String title, String des, String date, int id, int quan) {
+        String sql = "insert into Product values(?,?,?,?,?,?,?,?,?)";
         try {
             ps = connection.prepareStatement(sql);
-            ps.setString(1, name);
-            ps.setString(2, image);
-            ps.setDouble(3, price);
-            ps.setString(4, title);
-            ps.setString(5, des);
-            ps.setString(6, date);
-            ps.setInt(7, id);
-            ps.setInt(8, quan);
+            ps.setInt(1, masp);
+            ps.setString(2, name);
+            ps.setString(3, image);
+            ps.setDouble(4, price);
+            ps.setString(5, title);
+            ps.setString(6, des);
+            ps.setString(7, date);
+            ps.setInt(8, id);
+            ps.setInt(9, quan);
             ps.executeUpdate();
         } catch (Exception e) {
         }

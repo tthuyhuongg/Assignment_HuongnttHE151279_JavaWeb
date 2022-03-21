@@ -185,7 +185,7 @@
                                     <div class="type-lb">
                                         <p class="sale"></p>
                                     </div>
-                                    <img src="${p.image}"class="img-fluid" alt="Image">
+                                    <img src="${p.image}"style="width: 100%;height: 300px" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
                                             <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -201,7 +201,7 @@
                         <div class="col-lg-3 col-md-6 special-grid fruits">
                             <div class="products-single fix">
                                 <div class="box-img-hover">                            
-                                    <img src="${p.image}"class="img-fluid" alt="Image">
+                                    <img src="${p.image}" style="width: 100%;height: 300px" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
                                             <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -219,7 +219,7 @@
                         <div  class="col-lg-3 col-md-6 special-grid podded-vegetables">
                             <div class="products-single fix">
                                 <div class="box-img-hover">
-                                    <img src="${p.image}" class="img-fluid" alt="Image">
+                                    <img src="${p.image}" style="width: 100%;height: 300px" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
                                             <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>

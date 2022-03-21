@@ -97,6 +97,12 @@
                                             <table border="1"style="width: 300px;text-align: center">
                                                 <tbody>
                                                     <tr>
+                                                        <th>Masp</th>
+                                                        <td class="name-pr">
+                                                            <input type ="text" name ="masp" value="">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
                                                         <th>Tên</th>
                                                         <td class="name-pr">
                                                             <input type ="text" name ="name" value="">
