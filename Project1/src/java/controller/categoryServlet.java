@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -45,6 +46,8 @@ public class categoryServlet extends HttpServlet {
             request.setAttribute("listty", listty);
             request.setAttribute("listcb", listcb);
             request.setAttribute("listpro", listp);
+            HttpSession se = request.getSession();
+            se.setAttribute("url", "category");
             request.getRequestDispatcher("category.jsp").forward(request, response);
         }
     }

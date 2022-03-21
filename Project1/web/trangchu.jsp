@@ -171,6 +171,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Chào Mừng Bạn Đến Với<br>The Flower Shop</strong></h1>
+                            <p><a class="btn hvr-hover" href="first">Shop Now</a></p>
                         </div>
                     </div>
                 </div>
@@ -181,6 +182,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Chào Mừng Bạn Đến Với<br>The Flower Shop</strong></h1>
+                            <p><a class="btn hvr-hover" href="first">Shop Now</a></p>
                         </div>
                     </div>
                 </div>
@@ -191,6 +193,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Chào Mừng Bạn Đến Với<br>The Flower Shop</strong></h1>
+                            <p><a class="btn hvr-hover" href="first">Shop Now</a></p>
                         </div>
                     </div>
                 </div>
@@ -243,7 +246,7 @@
                                             <a class="cart" href="cart?idsp=${p.masp}">Thêm Vào Giỏ Hàng</a>
                                         </div>
                                     </div>
-                                    <div><a class="btn hvr-hover">${p.title}</a></div>                       
+                                    <div><a class="btn hvr-hover">${p.namesp}</a></div>                       
                                 </div>
                             </c:forEach>
                         </div>
@@ -265,13 +268,13 @@
 
             <div  class="row special-list">
                 <c:forEach items="${listpro}" var="p">
-                    <div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div style="width: 400px;height: 400px" class="col-lg-3 col-md-6 special-grid best-seller">
                         <div class="products-single fix">
                             <div class="box-img-hover">
                                 <div class="type-lb">
                                     <p class="sale"></p>
                                 </div>
-                                <img src="${p.image}" class="img-fluid" alt="Image">
+                                <img src="${p.image}"width="240px" height="400px" class="img-fluid" alt="Image">
                                 <div class="mask-icon">
                                     <ul>
                                         <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -282,9 +285,8 @@
                             </div>
                             <div class="why-text">
                                 <h4>${p.namesp}</h4>
-                                <h4>${p.title}</h4>
                                 <h4>${p.description}</h4>
-                                <h5>${p.price}</h5>  
+                                <h5>${p.price}00</h5>  
                             </div>
                         </div>
                     </div>

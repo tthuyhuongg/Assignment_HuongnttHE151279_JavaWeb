@@ -111,7 +111,9 @@ public class login extends HttpServlet {
             }
             response.addCookie(u);
             response.addCookie(pw);
-            response.sendRedirect("first");
+            
+           String loginn = (String) session.getAttribute("loginn");
+            response.sendRedirect(loginn);
         }
     }
 

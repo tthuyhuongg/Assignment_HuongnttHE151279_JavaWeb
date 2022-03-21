@@ -56,7 +56,7 @@
                             <ul>
                                 <li><a href="contact.jsp"><i class="fas fa-headset"></i> Liên Hệ</a></li>
                                     <c:if test="${sessionScope.account != null}">
-                                    <li><a href="#">${sessionScope.account.user}</a></li>
+                                    <li><a href="#">${sessionScope.account.name}</a></li>
                                     <li><a href="logout"><i class="fas fa-headset"></i> Đăng Xuất</a></li>
                                     </c:if>
                                     <c:if test="${sessionScope.account == null}">
@@ -185,7 +185,7 @@
                                     <div class="type-lb">
                                         <p class="sale"></p>
                                     </div>
-                                    <img src="${p.image}" class="img-fluid" alt="Image">
+                                    <img src="${p.image}"class="img-fluid" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
                                             <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -201,7 +201,7 @@
                         <div class="col-lg-3 col-md-6 special-grid fruits">
                             <div class="products-single fix">
                                 <div class="box-img-hover">                            
-                                    <img src="${p.image}" class="img-fluid" alt="Image">
+                                    <img src="${p.image}"class="img-fluid" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
                                             <li><a href="detail?masp=${p.masp}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -216,7 +216,7 @@
 
 
                     <c:forEach items="${listcb}" var="p">
-                        <div class="col-lg-3 col-md-6 special-grid podded-vegetables">
+                        <div  class="col-lg-3 col-md-6 special-grid podded-vegetables">
                             <div class="products-single fix">
                                 <div class="box-img-hover">
                                     <img src="${p.image}" class="img-fluid" alt="Image">

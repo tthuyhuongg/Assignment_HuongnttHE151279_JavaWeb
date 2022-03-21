@@ -8,6 +8,7 @@ package controller;
 import DAO.ProductDAO;
 import entity.Account;
 import entity.Cart;
+import entity.Oderdetail;
 import entity.Order;
 import entity.Ship;
 import java.io.IOException;
@@ -39,6 +40,14 @@ public class checkoutServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession se = request.getSession();
+        se.setAttribute("loginn", "checkout");
+        se.removeAttribute("cart");
+        se.setAttribute("size", 0);
+        String name = request.getParameter("name");
+        String user = request.getParameter("user");
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
+        ProductDAO p = new ProductDAO();
         Cart cart = null;
         if (se.getAttribute("cart") != null) {
             cart = (Cart) se.getAttribute("cart");
@@ -49,10 +58,12 @@ public class checkoutServlet extends HttpServlet {
             ProductDAO d = new ProductDAO();
             se.removeAttribute("cart");
             se.setAttribute("size", 0);
-            request.getRequestDispatcher("checkout.jsp").forward(request, response);
+            request.getRequestDispatcher("done.jsp").forward(request, response);
         } else {
             response.sendRedirect("Login.jsp");
+
         }
+
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -87,20 +98,21 @@ public class checkoutServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
         ProductDAO p = new ProductDAO();
-        
+        try {
+            p.ship(name, phone, address);
+        } catch (SQLException ex) {
+            Logger.getLogger(checkoutServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
         response.sendRedirect("done");
     }
 
-
-
-
-/**
- * Returns a short description of the servlet.
- *
- * @return a String containing servlet description
- */
-@Override
-        public String getServletInfo() {
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 

@@ -5,8 +5,6 @@
  */
 package controller;
 
-import DAO.ProductDAO;
-import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -19,7 +17,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author thuy huong
  */
-public class detailservlet extends HttpServlet {
+public class thanksServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,16 +31,8 @@ public class detailservlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            int masp = Integer.parseInt(request.getParameter("masp"));
-            ProductDAO pd = new ProductDAO();
-            Product d = pd.getsp(masp);
-            request.setAttribute("detailsp", d);
-//            HttpSession se = request.getSession();
-//            se.setAttribute("url", "detail");
-            request.getRequestDispatcher("Detail.jsp").forward(request, response);
-        }
+        HttpSession se = request.getSession();
+        request.getRequestDispatcher("done.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -57,7 +57,8 @@ public class carttServlet extends HttpServlet {
         ArrayList<Item> list = cart.getList();
         session.setAttribute("cart", cart);
         session.setAttribute("size", list.size());
-        request.getRequestDispatcher("first").forward(request, response);
+        String url =(String)session.getAttribute("url");
+        response.sendRedirect(url);
 
     }
 

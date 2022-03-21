@@ -57,7 +57,7 @@
                             <ul>
                                 <li><a href="contact.jsp"><i class="fas fa-headset"></i> Liên Hệ</a></li>
                                     <c:if test="${sessionScope.account != null}">
-                                    <li><a href="#">${sessionScope.account.user}</a></li>
+                                    <li><a href="#">${sessionScope.account.name}</a></li>
                                     <li><a href="logout"><i class="fas fa-headset"></i> Đăng Xuất</a></li>
                                     </c:if>
                                     <c:if test="${sessionScope.account == null}">
@@ -218,7 +218,7 @@
                                                 <button><a href="quantity?num=1&msp=${p.sp.masp}">+</a></button>
                                             </td>
                                             <td class="total-pr">
-                                                <p>${p.quantity * p.price}</p>
+                                                <p>${p.quantity * p.price}00</p>
                                             </td>
                                             <td class="remove-pr">
                                                 <a href="delete?msp=${p.sp.masp}">
@@ -254,7 +254,7 @@
                             <h3>Đơn Đặt Hàng</h3>
                             <div class="d-flex gr-total">
                                 <h5>Tổng Thanh Toán</h5>
-                                <div class="ml-auto h5">${o.total()}</div>
+                                <div class="ml-auto h5">${o.total()}00</div>
                             </div>
                             <hr> </div>
                     </div>

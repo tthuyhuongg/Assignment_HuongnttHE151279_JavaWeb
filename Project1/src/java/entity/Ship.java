@@ -56,6 +56,5 @@ public class Ship {
     public void setAddress(String address) {
         this.address = address;
     }
-   
-   
+     
 }

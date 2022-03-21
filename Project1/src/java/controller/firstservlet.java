@@ -52,6 +52,8 @@ public class firstservlet extends HttpServlet {
 //        for (Categories ca : listc) {
 //            out.println(ca);
 //        }
+            session.setAttribute("loginn", "first");
+            session.setAttribute("url", "first");
             request.getRequestDispatcher("trangchu.jsp").forward(request, response);
         }
     }

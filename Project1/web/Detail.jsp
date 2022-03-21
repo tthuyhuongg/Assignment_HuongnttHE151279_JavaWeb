@@ -58,7 +58,7 @@
                             <ul>
                                 <li><a href="contact.jsp"><i class="fas fa-headset"></i> Liên Hệ</a></li>
                                     <c:if test="${sessionScope.account != null}">
-                                    <li><a href="#">${sessionScope.account.user}</a></li>
+                                    <li><a href="#">${sessionScope.account.name}</a></li>
                                     <li><a href="logout"><i class="fas fa-headset"></i> Đăng Xuất</a></li>
                                     </c:if>
                                     <c:if test="${sessionScope.account == null}">
@@ -204,7 +204,7 @@
                     <div class="col-xl-7 col-lg-7 col-md-6">
                         <div class="single-product-details">
                             <h2>${detailsp.namesp}</h2>
-                            <h5>${detailsp.price} </h5>
+                            <h5>${detailsp.price}00 </h5>
                             <p class="available-stock"><span> <a href="#"> </a></span><p>
                             <h4>${detailsp.description}</h4>
 

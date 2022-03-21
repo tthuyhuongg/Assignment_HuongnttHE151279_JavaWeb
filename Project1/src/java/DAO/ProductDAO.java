@@ -347,7 +347,7 @@ public class ProductDAO extends BaseDAO<Product> {
         return list;
     }
 
-    public int ship(Ship p) throws SQLException {
+    public void ship(String name, String phone, String adderss) throws SQLException {
         try {
             String sql = "INSERT INTO [projectt].[dbo].[Ship]\n"
                     + "           ([name]\n"
@@ -356,17 +356,30 @@ public class ProductDAO extends BaseDAO<Product> {
                     + "     VALUES\n"
                     + "           (?,?,?)";
             ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, p.getName());
-            ps.setString(2, p.getPhone());
-            ps.setString(3, p.getAddress());
+            ps.setString(1, name);
+            ps.setString(2, phone);
+            ps.setString(3, adderss);
             ps.executeUpdate();
-            rs = ps.getGeneratedKeys();
-            while (rs.next()) {
-                return rs.getInt(1);
-            }
+            ps.executeUpdate();
         } catch (Exception e) {
         }
-        return 0;
+    }
+    public void Oderdetail(String name, String phone, String adderss) throws SQLException {
+        try {
+            String sql = "INSERT INTO [projectt].[dbo].[Ship]\n"
+                    + "           ([name]\n"
+                    + "           ,[phone]\n"
+                    + "           ,[address])\n"
+                    + "     VALUES\n"
+                    + "           (?,?,?)";
+            ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, name);
+            ps.setString(2, phone);
+            ps.setString(3, adderss);
+            ps.executeUpdate();
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
     }
 
     public int oder(Order o) {
