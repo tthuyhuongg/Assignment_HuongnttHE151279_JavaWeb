@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Order {
     private int id;
-    private String cusid;
+    private int cusid;
     private String date;
     private double Total;
     private int ship;
@@ -21,7 +21,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(int id, String cusid, String date, double Total, int ship) {
+    public Order(int id, int cusid, String date, double Total, int ship) {
         this.id = id;
         this.cusid = cusid;
         this.date = date;
@@ -37,11 +37,11 @@ public class Order {
         this.id = id;
     }
 
-    public String getCusid() {
+    public int getCusid() {
         return cusid;
     }
 
-    public void setCusid(String cusid) {
+    public void setCusid(int cusid) {
         this.cusid = cusid;
     }
 

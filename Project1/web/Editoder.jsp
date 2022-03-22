@@ -1,3 +1,4 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -79,57 +80,30 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="table-main table-responsive">
-                            <form action="edit" method="post">
+                            <form action="editoder" method="post">
                                 <body>
-                                    <h1>Edit Sản Phẩm </h1>
+                                    <h1>Edit Oder </h1>
                                     <table border="1" style="width: 1100px;text-align: center; margin-left: auto;margin-right: auto">
                                         <tbody>
                                             <tr>
                                             <tr>
-                                                <td>Mã Sản Phẩm</td>
-                                                <td><input type ="text" name ="id" value="${listedit.masp}"readonly="true" size="150"</td>
+                                                <td>Mã Khách Hàng</td>
+                                                <td><input type ="text" name ="mkh" value="${liste.cusid}"readonly="true" size="150"</td>
                                             </tr>
                                             <tr>
-                                                <td>Tên Sản Phẩm</td>
-                                                <td><input type ="text" name ="name" value="${listedit.namesp}"size="150"></td>
+                                                <td>Ngày Đặt Hàng</td>
+                                                <td><input type ="text" name ="date" value="${liste.date}"size="150"></td>
+                                            </tr>
+                                         
+                                            <tr>
+                                                <td>Tổng Tiền</td>
+                                                <td><input type="text" name ="price" value="${liste.getTotal()}" size="150"</td>
                                             </tr>
                                             <tr>
-                                                <td>Ảnh</td>
-                                                <td><input type="text" name ="image" value="${listedit.image}"size="150"</td>
+                                                <td>Mã ship</td>
+                                                <td><input type="text" name ="shipid" value="${liste.ship}"size="150"</td>
                                             </tr>
-                                            <tr>
-                                                <td>Giá Sản Phẩm</td>
-                                                <td><input type="text" name ="price" value="${listedit.price}"size="150"</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tiêu Đề</td>
-                                                <td><input type="text" name ="title" value="${listedit.title}"size="150"</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Mô tả</td>
-                                                <td><input type="text" name ="des" value="${listedit.description}"size="150"</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ngày Đăng</td>
-                                                <td><input type="text" name ="date" value="${listedit.date}"size="150"</td>
-                                            </tr>                                         
-                                            <tr>
-                                                <td>Số Lượng</td>
-                                                <td><input type="text" name ="quantity" value="${listedit.quantity}"size="150"</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Danh Mục Sản Phẩm</td>
-                                                <td>
-                                                    <select name="categorycaid" >
-                                                        <c:forEach items="${listC}" var="C">
-                                                            <option ${C.caid == listedit.idcate?"selected":""} value="${C.caid}">
-                                                                ${C.caname}
-                                                            </option>
-                                                        </c:forEach>
-                                                    </select>
-                                                </td>
-                                            </tr>
+                                          
                                             <tr>
                                                 <td></td>
                                                 <td><button type ="submit">Update</button></td>
@@ -168,4 +142,5 @@
     </body>
 
 </html>
+
 

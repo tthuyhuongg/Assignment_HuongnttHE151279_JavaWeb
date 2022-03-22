@@ -49,6 +49,25 @@ public class ProductDAO extends BaseDAO<Product> {
 
     }
 
+    public ArrayList<Order> getAlloder() {
+        ArrayList<Order> list = new ArrayList<>();
+        String sql = "select * from Oder";
+        try {
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Order c = new Order();
+                c.setCusid(rs.getInt("cusid"));
+                c.setDate(rs.getString("orderdate"));
+                c.setTotal(rs.getDouble("totalmoney"));
+                c.setShip(rs.getInt("shipid"));
+                list.add(c);
+            }
+        } catch (SQLException e) {
+        }
+        return list;
+    }
+
     public ArrayList<Categories> getAllCa() {
         ArrayList<Categories> list = new ArrayList<>();
         String sql = "select* from Categories";
@@ -110,6 +129,25 @@ public class ProductDAO extends BaseDAO<Product> {
                         rs.getString("dateup"),
                         rs.getInt("quantity"),
                         rs.getInt("Id"));
+            }
+        } catch (SQLException e) {
+        }
+        return null;
+    }
+
+    public Order getoder(int mkh) {
+        String sql = "select * from Oder where cusid = ?";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, mkh);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Order(
+                        rs.getInt(1),
+                        rs.getInt(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getInt(5));
             }
         } catch (SQLException e) {
         }
@@ -184,7 +222,7 @@ public class ProductDAO extends BaseDAO<Product> {
         return null;
     }
 
-    public void signup(String uname, String pass,String name,String roles) {
+    public void signup(String uname, String pass, String name, String roles) {
         String sql = "insert into Acount(username,pass,name,roles) values\n"
                 + "(?,?,?,?)";
         try {
@@ -197,10 +235,6 @@ public class ProductDAO extends BaseDAO<Product> {
             ps.executeUpdate();
         } catch (Exception e) {
         }
-    }
-
-    public static void main(String[] args) {
-        ProductDAO d = new ProductDAO();
     }
 
     public void addcategory(String name, String image) {
@@ -222,6 +256,16 @@ public class ProductDAO extends BaseDAO<Product> {
         try {
             ps = connection.prepareStatement(sql);
             ps.setString(1, msp);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+
+    public void deleteor(int msp) {
+        String sql = "delete from Oder where cusid = ?";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, msp);
             ps.executeUpdate();
         } catch (Exception e) {
         }
@@ -255,6 +299,24 @@ public class ProductDAO extends BaseDAO<Product> {
 
     }
 
+    public void editoder(int cusid, String date, Double total, int shipid) {
+        String sql = "UPDATE [projectt].[dbo].[Oder]\n"
+                + "   SET [orderdate] = ?\n"
+                + "      ,[totalmoney] = ?\n"
+                + "      ,[shipid] = ?\n"
+                + " WHERE cusid = ?";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, date);
+            ps.setDouble(2, total);
+            ps.setInt(3, shipid);
+            ps.setInt(4, cusid);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+
+    }
+
     public void addproduct(int masp, String name, String image, double price, String title, String des, String date, int id, int quan) {
         String sql = "insert into Product values(?,?,?,?,?,?,?,?,?)";
         try {
@@ -268,6 +330,20 @@ public class ProductDAO extends BaseDAO<Product> {
             ps.setString(7, date);
             ps.setInt(8, id);
             ps.setInt(9, quan);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+
+    public void addoder(int cusid, String date, Double total, int ship) {
+        String sql = "insert into Oder values\n"
+                + "(?,?,?,?)";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, cusid);
+            ps.setString(2, date);
+            ps.setDouble(3, total);
+            ps.setInt(4, ship);
             ps.executeUpdate();
         } catch (Exception e) {
         }

@@ -70,7 +70,7 @@
                                     <li><a href="#"><i class="fa fa-user s_color"></i>Người Dùng</a></li>
                                     </c:if>
                                     <c:if test="${sessionScope.account.role == 'admin'}">
-                                    <li><a href="manager"><i class="fa fa-user s_color"></i>Người Quản Lý</a></li>
+                                    <li><a href="AllManager.jsp"><i class="fa fa-user s_color"></i>Người Quản Lý</a></li>
                                     </c:if>
                             </ul>
                         </div>

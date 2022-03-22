@@ -61,22 +61,22 @@
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
-                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="first">Trang Chủ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.jsp">The Flower<br> Shop</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Cửa Hàng</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="shop.jsp">Sidebar Shop</a></li>
-                                <li><a href="detail">Shop Detail</a></li>
-                                <li><a href="Cart.jsp">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="category">Danh mục<br> sản phẩm</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.jsp">Liên Hệ</a></li>
-                    </ul>
-                </div>
+                        <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class="nav-item active"><a class="nav-link" href="first">Trang Chủ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.jsp">The Flower<br> Shop</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Cửa Hàng</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="shop.jsp">Sidebar Shop</a></li>
+                                    <li><a href="detail">Shop Detail</a></li>
+                                    <li><a href="Cart.jsp">Cart</a></li>
+                                    <li><a href="checkout.html">Checkout</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="category">Danh mục<br> sản phẩm</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.jsp">Liên Hệ</a></li>
+                        </ul>
+                    </div>
                     <!-- /.navbar-collapse -->           
                     </header>
                     <!-- End Main Top -->
@@ -92,72 +92,35 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="table-main table-responsive">
-                                        <h1>Thêm Sản Phẩm</h1>
-                                        <form action="add" method="post">
+                                        <h1>Add Oder</h1>
+                                        <form action="addoder" method="post">
                                             <table border="1" style="width: 1100px;text-align: center; margin-left: auto;margin-right: auto">
                                                 <tbody>
                                                     <tr>
-                                                        <th>Masp</th>
+                                                        <th>Mã Khách Hàng</th>
                                                         <td class="name-pr">
-                                                            <input type ="text" name ="masp" value=""size="150">
+                                                            <input type ="text" name ="mkh" value=""size="150">
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>Tên</th>
+                                                        <th>Ngày Đặt Hàng</th>
                                                         <td class="name-pr">
-                                                            <input type ="text" name ="name" value=""size="150">
+                                                            <input type ="date" name ="date" value=""size="150">
                                                         </td>
                                                     </tr>
+                                                  
                                                     <tr>
-                                                        <th>Ảnh</th>
-                                                        <td class="name-pr">
-                                                            <input type ="text" name ="image" value=""size="150">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Giá</th>
+                                                        <th>Tổng Thanh toán</th>
                                                         <td class="name-pr">
                                                             <input type ="text" name ="price" value=""size="150">
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>Tiêu Đề</th>
+                                                        <th>Mã ship</th>
                                                         <td class="name-pr">
-                                                            <input type ="text" name ="title" value=""size="150">
+                                                            <input type ="text" name ="ship" value=""size="150">
                                                         </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Mô Tả</th>
-                                                        <td class="name-pr">
-                                                            <input type ="text" name ="des" value=""size="150">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Ngày Đăng</th>
-                                                        <td class="name-pr">
-                                                            <input type ="date" name ="date" value=""size="150">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-
-                                                        <th>Số Lượng</th>
-                                                        <td class="name-pr">
-                                                            <input type ="text" name ="quan" value="">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Danh Mục</td>
-                                                        <td>
-                                                            <select name="cateid">
-                                                                <c:forEach items="${listC}" var="C">
-                                                                    <option  value="${C.caid}">
-                                                                        ${C.caname}
-                                                                    </option>
-                                                                </c:forEach>
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    
+                                                    </tr> 
                                                 </tbody>
                                             </table>
                                             <button type ="submit">ADD</button>
@@ -196,3 +159,4 @@
                             </body>
 
                             </html>
+

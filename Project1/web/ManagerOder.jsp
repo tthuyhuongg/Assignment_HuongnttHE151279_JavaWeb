@@ -122,59 +122,51 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1><b>The Flower Shop Manage Product</b></h1><br>
+                    <h1><b>The Flower Shop Manage Order</b></h1><br>
                     <div class="table-main table-responsive">
-                        <form name ="m" action="" method="post">
-<!--                            <button><a href="addca?msp=${p.masp}">Thêm Danh Mục Sản Phẩm</a></button>-->
-                            <button><a href="add?msp=${p.masp}">Thêm Sản Phẩm</a></button>
-                            <table border="1" style="width: 1100px;text-align: center; margin-left: auto;margin-right: auto">
+                        <form action="order" method="post">
+<!--                            <button><a href="addca?msp=$">Thêm Danh Mục Sản Phẩm</a></button>-->
+                            <button><a href="addoder">Add Oder</a></button>
+                            <table  border="1" style="width: 1100px;text-align: center; margin-left: auto;margin-right: auto">
                                 <thead>
                                     <tr>
-                                        <th><h2><b>Mã Sản Phẩm</b></h2></th>
-                                        <th><h2><b>Tên Sản Phẩm</b></h2></th>
-                                        <th><h2><b>Ảnh Sản Phẩm</b></h2></th>
-                                        <th><h2><b>Mô Tả Sản Phẩm</b></h2></th>
-                                        <th><h2><b>Giá Sản Phẩm</b></h2></th>
+                       
+                                        <th><h2><b>Mã Khách Hàng</b></h2></th>
+                                        <th><h2><b>Ngày đặt Hàng</b></h2></th>
+                                        <th><h2><b>Tổng Tiền</b></h2></th>
+                                        <th><h2><b>Mã Ship</b></h2></th>
                                         <th><h2><b>Sửa/Xóa</b></h2></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${page}" var="p">
+                                    <c:forEach items="${sessionScope.listo}" var="o">
                                         <tr>
                                             <td class="name-pr">
-                                                    ${p.masp}
+                                                   ${o.cusid}
                                             </td>
                                             <td class="name-pr">
-                                                    ${p.namesp}
-                                            </td>
-                                            <td class="thumbnail-img">
-                                                    <img class="img-fluid" src="${p.image}" alt="" />
-                                            </td>
-                                            <td class="name-pr">
-                                                    ${p.description}
+                                                    ${o.date}
                                             </td>
                                             <td class="price-pr">
-                                                <p><fmt:formatNumber maxFractionDigits="3" value="${p.price* 1000}" type="number"></fmt:formatNumber></p>
+                                                <p><fmt:formatNumber maxFractionDigits="3" value="${o.getTotal()}" type="number"></fmt:formatNumber></p>
+                                            </td>
+                                            <td class="name-pr">
+                                                    ${o.ship}
                                             </td>
                                             <td class="remove-pr">
-                                                <button><a href="edit?msp=${p.masp}">Sửa</a></button>
-                                                <button><a href="#"onclick="showmess('${p.masp}')">Xóa</a></button>	
+                                                <button><a href="editoder?mkh=${o.cusid}">Sửa</a></button>
+                                                <button><a href="#"onclick="showmess('${o.cusid}')">Xóa</a></button>	
                                             </td>
                                         </tr>
                                     </c:forEach>
                                 </tbody>                             
                             </table>
                             <br>
-                            <c:forEach begin="1" end="${totalp}" varStatus="t">
-                                <button><a href="manager?index=${t.index}">${t.index}</a></button>
-                            </c:forEach>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </div>
     <!-- End Cart -->
     <!-- Start Instagram Feed  -->
@@ -359,7 +351,7 @@
         function showmess(id){
             var option = confirm('Do you want to delete');
             if(option === true){
-                window.location.href ='deletemanager?msp='+id;
+                window.location.href ='deleteoder?mkh='+id;
             }
         }
     </script>
