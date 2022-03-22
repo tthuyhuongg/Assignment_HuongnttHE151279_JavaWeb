@@ -14,15 +14,23 @@
     <form action="signup" method="post">
         <p class="text-danger">${messs}</p>
         <div class="form-group py-2">
-            <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text" name="username" placeholder="Username or Email Address" required class=""> </div>
+            <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text" name="username" placeholder="Enter your Username " required class=""> </div>
+        </div>
+        <br>
+         <div class="form-group py-1 pb-2">
+            <div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="text" name="name" placeholder="Enter your name" required class=""> <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button> </div>
+        </div>
+        <br>
+         <div class="form-group py-1 pb-2">
+            <div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="text" name="roles" placeholder="You can choose enter user or admin" required class=""> <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button> </div>
         </div>
         <br>
         <div class="form-group py-1 pb-2">
-            <div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="text" name="password" placeholder="Enter your Password" required class=""> <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button> </div>
+            <div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="password" name="password" placeholder="Enter your Password" required class=""> <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button> </div>
         </div>
         <br>
         <div class="form-group py-1 pb-2">
-            <div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="text" name="repassword" placeholder="Enter Re-Password" required class=""> <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button> </div>
+            <div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="password" name="repassword" placeholder="Enter Re-Password" required class=""> <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button> </div>
         </div>
         <br>
         <button class="btn btn-block text-center my-3">Sign Up</button>

@@ -18,7 +18,7 @@
         </div>
         <br>
         <div class="form-group py-1 pb-2">
-            <div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="text" name="password" value="${passw}" placeholder="Nhập mật khẩu" required class=""> <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button> </div>
+            <div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="password" name="password" value="${passw}" placeholder="Nhập mật khẩu" required class=""> <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button> </div>
         </div>
         <br>
 <!--        <div class="d-flex align-items-start">

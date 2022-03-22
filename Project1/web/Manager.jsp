@@ -158,7 +158,7 @@
                                             </td>
                                             <td class="remove-pr">
                                                 <button><a href="edit?msp=${p.masp}">Sửa</a></button>
-                                                <button><a href="deletemanager?msp=${p.masp}">Xóa</a></button>	
+                                                <button><a href="#"onclick="showmess('${p.masp}')">Xóa</a></button>	
                                             </td>
                                         </tr>
                                     </c:forEach>
@@ -355,6 +355,14 @@
     <!-- End copyright  -->
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+     <script>
+        function showmess(id){
+            var option = confirm('Are you want to delete');
+            if(option === true){
+                window.location.href ='deletemanager?msp='+id;
+            }
+        }
+    </script>
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>

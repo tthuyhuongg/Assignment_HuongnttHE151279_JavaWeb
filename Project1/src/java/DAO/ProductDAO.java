@@ -184,16 +184,23 @@ public class ProductDAO extends BaseDAO<Product> {
         return null;
     }
 
-    public void signup(String name, String pass) {
-        String sql = "insert into Acount values(?,?,0)";
+    public void signup(String uname, String pass,String name,String roles) {
+        String sql = "insert into Acount(username,pass,name,roles) values\n"
+                + "(?,?,?,?)";
         try {
             ps = connection.prepareStatement(sql);
-            ps.setString(1, name);
+            ps.setString(1, uname);
             ps.setString(2, pass);
+            ps.setString(3, name);
+            ps.setString(4, roles);
             //   ps.setInt(3,isAdmin);
             ps.executeUpdate();
         } catch (Exception e) {
         }
+    }
+
+    public static void main(String[] args) {
+        ProductDAO d = new ProductDAO();
     }
 
     public void addcategory(String name, String image) {
@@ -248,7 +255,7 @@ public class ProductDAO extends BaseDAO<Product> {
 
     }
 
-    public void addproduct(int masp,String name, String image, double price, String title, String des, String date, int id, int quan) {
+    public void addproduct(int masp, String name, String image, double price, String title, String des, String date, int id, int quan) {
         String sql = "insert into Product values(?,?,?,?,?,?,?,?,?)";
         try {
             ps = connection.prepareStatement(sql);
@@ -365,6 +372,7 @@ public class ProductDAO extends BaseDAO<Product> {
         } catch (Exception e) {
         }
     }
+
     public void Oderdetail(String name, String phone, String adderss) throws SQLException {
         try {
             String sql = "INSERT INTO [projectt].[dbo].[Ship]\n"

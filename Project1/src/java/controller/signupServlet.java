@@ -33,6 +33,8 @@ public class signupServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String user = request.getParameter("username");
+        String name = request.getParameter("name");
+        String roles = request.getParameter("roles");
         String pass = request.getParameter("password");
         String repass = request.getParameter("repassword");
         ProductDAO d = new ProductDAO();
@@ -43,8 +45,8 @@ public class signupServlet extends HttpServlet {
         } else {
             d.checkacc(user);
             if (a == null) {
-                d.signup(user, pass);
-                response.sendRedirect("first");
+                d.signup(user, pass, name, roles);
+                response.sendRedirect("login");
             } else {
                 request.setAttribute("messs", "Tên đăng nhập đã tồn tại.Vui Lòng sử dụng tên khác.");
                 request.getRequestDispatcher("singup.jsp").forward(request, response);

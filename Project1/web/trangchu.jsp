@@ -172,7 +172,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Chào Mừng Bạn Đến Với<br>The Flower Shop</strong></h1>
-                            <p><a class="btn hvr-hover" href="first">Shop Now</a></p>
+                            <p><a class="btn hvr-hover" href="category">Shop Now</a></p>
                         </div>
                     </div>
                 </div>
@@ -183,7 +183,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Chào Mừng Bạn Đến Với<br>The Flower Shop</strong></h1>
-                            <p><a class="btn hvr-hover" href="first">Shop Now</a></p>
+                            <p><a class="btn hvr-hover" href="category">Shop Now</a></p>
                         </div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Chào Mừng Bạn Đến Với<br>The Flower Shop</strong></h1>
-                            <p><a class="btn hvr-hover" href="first">Shop Now</a></p>
+                            <p><a class="btn hvr-hover" href="category">Shop Now</a></p>
                         </div>
                     </div>
                 </div>
